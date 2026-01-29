@@ -688,7 +688,7 @@
       </argGroup>
       <argGroup name="Properties">
         <arg type="integer32" var="$parameters.properties.instantAccessDurationMinutes" options="instant-access-duration-minutes instant-access-duration" group="Properties">
-          <help short="This property determines the time in minutes the snapshot is retained as instant access for restoring Premium SSD v2 or Ultra disk with fast restore performance in this restore point."/>
+          <help short="This property determines the time in minutes the snapshot is retained as instant access for restoring Premium SSD v2 or Ultra disk with fast restore performance in this restore point. Range is between 60 and 300. Default is 300."/>
         </arg>
         <arg type="object" var="$parameters.properties.sourceMetadata" options="source-metadata" group="Properties">
           <help short="Gets the details of the VM captured at the time of the restore point creation."/>
