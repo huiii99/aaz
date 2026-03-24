@@ -1,4 +1,4 @@
-# [Command] _compute virtual-machine restart_
+# [Command] _vm restart_
 
 The operation to restart a virtual machine.
 
