@@ -19,7 +19,7 @@
             </path>
             <query>
               <const readOnly="True" const="True" type="string" name="api-version" required="True">
-                <default value="&quot;2025-07-01&quot;"/>
+                <default value="&quot;&quot;2025-07-01&quot;&quot;"/>
                 <format minLength="1"/>
               </const>
             </query>
@@ -48,12 +48,12 @@
                               <prop type="string" name="data"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -116,9 +116,9 @@
                                               <prop type="object" name="properties" clientFlatten="True">
                                                 <prop type="string" name="adminState">
                                                   <enum>
-                                                    <item value="&quot;Down&quot;"/>
-                                                    <item value="&quot;None&quot;"/>
-                                                    <item value="&quot;Up&quot;"/>
+                                                    <item value="&quot;&quot;Down&quot;&quot;"/>
+                                                    <item value="&quot;&quot;None&quot;&quot;"/>
+                                                    <item value="&quot;&quot;Up&quot;&quot;"/>
                                                   </enum>
                                                 </prop>
                                                 <prop readOnly="True" type="array<object>" name="inboundNatRulesPortMapping">
@@ -146,18 +146,18 @@
                                           </prop>
                                           <prop readOnly="True" type="string" name="provisioningState">
                                             <enum>
-                                              <item value="&quot;Canceled&quot;"/>
-                                              <item value="&quot;Creating&quot;"/>
-                                              <item value="&quot;Deleting&quot;"/>
-                                              <item value="&quot;Failed&quot;"/>
-                                              <item value="&quot;Succeeded&quot;"/>
-                                              <item value="&quot;Updating&quot;"/>
+                                              <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                              <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                              <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                              <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                              <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                              <item value="&quot;&quot;Updating&quot;&quot;"/>
                                             </enum>
                                           </prop>
                                           <prop type="string" name="syncMode">
                                             <enum>
-                                              <item value="&quot;Automatic&quot;"/>
-                                              <item value="&quot;Manual&quot;"/>
+                                              <item value="&quot;&quot;Automatic&quot;&quot;"/>
+                                              <item value="&quot;&quot;Manual&quot;&quot;"/>
                                             </enum>
                                           </prop>
                                           <prop type="array<object>" name="tunnelInterfaces">
@@ -166,16 +166,16 @@
                                               <prop type="integer32" name="port"/>
                                               <prop type="string" name="protocol">
                                                 <enum>
-                                                  <item value="&quot;Native&quot;"/>
-                                                  <item value="&quot;None&quot;"/>
-                                                  <item value="&quot;VXLAN&quot;"/>
+                                                  <item value="&quot;&quot;Native&quot;&quot;"/>
+                                                  <item value="&quot;&quot;None&quot;&quot;"/>
+                                                  <item value="&quot;&quot;VXLAN&quot;&quot;"/>
                                                 </enum>
                                               </prop>
                                               <prop type="string" name="type">
                                                 <enum>
-                                                  <item value="&quot;External&quot;"/>
-                                                  <item value="&quot;Internal&quot;"/>
-                                                  <item value="&quot;None&quot;"/>
+                                                  <item value="&quot;&quot;External&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Internal&quot;&quot;"/>
+                                                  <item value="&quot;&quot;None&quot;&quot;"/>
                                                 </enum>
                                               </prop>
                                             </item>
@@ -205,20 +205,20 @@
                                           <prop type="integer32" name="idleTimeoutInMinutes"/>
                                           <prop type="string" name="protocol">
                                             <enum>
-                                              <item value="&quot;All&quot;"/>
-                                              <item value="&quot;Quic&quot;"/>
-                                              <item value="&quot;Tcp&quot;"/>
-                                              <item value="&quot;Udp&quot;"/>
+                                              <item value="&quot;&quot;All&quot;&quot;"/>
+                                              <item value="&quot;&quot;Quic&quot;&quot;"/>
+                                              <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                              <item value="&quot;&quot;Udp&quot;&quot;"/>
                                             </enum>
                                           </prop>
                                           <prop readOnly="True" type="string" name="provisioningState">
                                             <enum>
-                                              <item value="&quot;Canceled&quot;"/>
-                                              <item value="&quot;Creating&quot;"/>
-                                              <item value="&quot;Deleting&quot;"/>
-                                              <item value="&quot;Failed&quot;"/>
-                                              <item value="&quot;Succeeded&quot;"/>
-                                              <item value="&quot;Updating&quot;"/>
+                                              <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                              <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                              <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                              <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                              <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                              <item value="&quot;&quot;Updating&quot;&quot;"/>
                                             </enum>
                                           </prop>
                                         </prop>
@@ -232,14 +232,14 @@
                                     </prop>
                                     <prop type="string" name="privateIPAddressVersion">
                                       <enum>
-                                        <item value="&quot;IPv4&quot;"/>
-                                        <item value="&quot;IPv6&quot;"/>
+                                        <item value="&quot;&quot;IPv4&quot;&quot;"/>
+                                        <item value="&quot;&quot;IPv6&quot;&quot;"/>
                                       </enum>
                                     </prop>
                                     <prop type="string" name="privateIPAllocationMethod">
                                       <enum>
-                                        <item value="&quot;Dynamic&quot;"/>
-                                        <item value="&quot;Static&quot;"/>
+                                        <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                        <item value="&quot;&quot;Static&quot;&quot;"/>
                                       </enum>
                                     </prop>
                                     <prop readOnly="True" type="object" name="privateLinkConnectionProperties">
@@ -251,12 +251,12 @@
                                     </prop>
                                     <prop readOnly="True" type="string" name="provisioningState">
                                       <enum>
-                                        <item value="&quot;Canceled&quot;"/>
-                                        <item value="&quot;Creating&quot;"/>
-                                        <item value="&quot;Deleting&quot;"/>
-                                        <item value="&quot;Failed&quot;"/>
-                                        <item value="&quot;Succeeded&quot;"/>
-                                        <item value="&quot;Updating&quot;"/>
+                                        <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                        <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                        <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                        <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                        <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                        <item value="&quot;&quot;Updating&quot;&quot;"/>
                                       </enum>
                                     </prop>
                                     <prop type="@CommonPublicIPAddress_read" name="publicIPAddress"/>
@@ -296,24 +296,24 @@
                                               <prop type="string" name="privateIPAddress"/>
                                               <prop type="string" name="privateIPAddressVersion">
                                                 <enum>
-                                                  <item value="&quot;IPv4&quot;"/>
-                                                  <item value="&quot;IPv6&quot;"/>
+                                                  <item value="&quot;&quot;IPv4&quot;&quot;"/>
+                                                  <item value="&quot;&quot;IPv6&quot;&quot;"/>
                                                 </enum>
                                               </prop>
                                               <prop type="string" name="privateIPAllocationMethod">
                                                 <enum>
-                                                  <item value="&quot;Dynamic&quot;"/>
-                                                  <item value="&quot;Static&quot;"/>
+                                                  <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Static&quot;&quot;"/>
                                                 </enum>
                                               </prop>
                                               <prop readOnly="True" type="string" name="provisioningState">
                                                 <enum>
-                                                  <item value="&quot;Canceled&quot;"/>
-                                                  <item value="&quot;Creating&quot;"/>
-                                                  <item value="&quot;Deleting&quot;"/>
-                                                  <item value="&quot;Failed&quot;"/>
-                                                  <item value="&quot;Succeeded&quot;"/>
-                                                  <item value="&quot;Updating&quot;"/>
+                                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                 </enum>
                                               </prop>
                                               <prop type="@CommonPublicIPAddress_read" name="publicIPAddress"/>
@@ -344,12 +344,12 @@
                                                         </prop>
                                                         <prop readOnly="True" type="string" name="provisioningState">
                                                           <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                         <prop type="string" name="serviceName"/>
@@ -368,12 +368,12 @@
                                                       <prop type="object" name="properties" clientFlatten="True">
                                                         <prop readOnly="True" type="string" name="provisioningState">
                                                           <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                         <prop type="@CommonSubnet_read" name="subnet"/>
@@ -390,18 +390,18 @@
                                                         <prop type="string" name="privateIPAddress"/>
                                                         <prop type="string" name="privateIPAllocationMethod">
                                                           <enum>
-                                                            <item value="&quot;Dynamic&quot;"/>
-                                                            <item value="&quot;Static&quot;"/>
+                                                            <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Static&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                         <prop readOnly="True" type="string" name="provisioningState">
                                                           <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                         <prop type="object" name="publicIPAddress" cls="CommonPublicIPAddress_read">
@@ -416,26 +416,26 @@
                                                             <prop type="@CommonSubResource_read" name="ddosProtectionPlan"/>
                                                             <prop type="string" name="protectionMode">
                                                             <enum>
-                                                            <item value="&quot;Disabled&quot;"/>
-                                                            <item value="&quot;Enabled&quot;"/>
-                                                            <item value="&quot;VirtualNetworkInherited&quot;"/>
+                                                            <item value="&quot;&quot;Disabled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Enabled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;VirtualNetworkInherited&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             </prop>
                                                             <prop type="string" name="deleteOption">
                                                             <enum>
-                                                            <item value="&quot;Delete&quot;"/>
-                                                            <item value="&quot;Detach&quot;"/>
+                                                            <item value="&quot;&quot;Delete&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Detach&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="object" name="dnsSettings">
                                                             <prop type="string" name="domainNameLabel"/>
                                                             <prop type="string" name="domainNameLabelScope">
                                                             <enum>
-                                                            <item value="&quot;NoReuse&quot;"/>
-                                                            <item value="&quot;ResourceGroupReuse&quot;"/>
-                                                            <item value="&quot;SubscriptionReuse&quot;"/>
-                                                            <item value="&quot;TenantReuse&quot;"/>
+                                                            <item value="&quot;&quot;NoReuse&quot;&quot;"/>
+                                                            <item value="&quot;&quot;ResourceGroupReuse&quot;&quot;"/>
+                                                            <item value="&quot;&quot;SubscriptionReuse&quot;&quot;"/>
+                                                            <item value="&quot;&quot;TenantReuse&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="fqdn"/>
@@ -453,11 +453,11 @@
                                                             <prop type="@CommonPublicIPAddress_read" name="linkedPublicIPAddress"/>
                                                             <prop type="string" name="migrationPhase">
                                                             <enum>
-                                                            <item value="&quot;Abort&quot;"/>
-                                                            <item value="&quot;Commit&quot;"/>
-                                                            <item value="&quot;Committed&quot;"/>
-                                                            <item value="&quot;None&quot;"/>
-                                                            <item value="&quot;Prepare&quot;"/>
+                                                            <item value="&quot;&quot;Abort&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Commit&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Committed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Prepare&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="object" name="natGateway">
@@ -471,19 +471,19 @@
                                                             <prop type="integer32" name="idleTimeoutInMinutes"/>
                                                             <prop type="string" name="nat64">
                                                             <enum>
-                                                            <item value="&quot;Disabled&quot;"/>
-                                                            <item value="&quot;Enabled&quot;"/>
-                                                            <item value="&quot;None&quot;"/>
+                                                            <item value="&quot;&quot;Disabled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Enabled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="array<@CommonSubResource_read>" name="publicIpAddresses">
@@ -508,8 +508,8 @@
                                                             <prop type="object" name="sku">
                                                             <prop type="string" name="name">
                                                             <enum>
-                                                            <item value="&quot;Standard&quot;"/>
-                                                            <item value="&quot;StandardV2&quot;"/>
+                                                            <item value="&quot;&quot;Standard&quot;&quot;"/>
+                                                            <item value="&quot;&quot;StandardV2&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             </prop>
@@ -525,24 +525,24 @@
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="publicIPAddressVersion">
                                                             <enum>
-                                                            <item value="&quot;IPv4&quot;"/>
-                                                            <item value="&quot;IPv6&quot;"/>
+                                                            <item value="&quot;&quot;IPv4&quot;&quot;"/>
+                                                            <item value="&quot;&quot;IPv6&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="publicIPAllocationMethod">
                                                             <enum>
-                                                            <item value="&quot;Dynamic&quot;"/>
-                                                            <item value="&quot;Static&quot;"/>
+                                                            <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Static&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="@CommonSubResource_read" name="publicIPPrefix"/>
@@ -552,15 +552,15 @@
                                                           <prop type="object" name="sku">
                                                             <prop type="string" name="name">
                                                             <enum>
-                                                            <item value="&quot;Basic&quot;"/>
-                                                            <item value="&quot;Standard&quot;"/>
-                                                            <item value="&quot;StandardV2&quot;"/>
+                                                            <item value="&quot;&quot;Basic&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Standard&quot;&quot;"/>
+                                                            <item value="&quot;&quot;StandardV2&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="tier">
                                                             <enum>
-                                                            <item value="&quot;Global&quot;"/>
-                                                            <item value="&quot;Regional&quot;"/>
+                                                            <item value="&quot;&quot;Global&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Regional&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                           </prop>
@@ -612,10 +612,10 @@
                                                             <prop readOnly="True" type="string" name="tenantId"/>
                                                             <prop type="string" name="type">
                                                             <enum>
-                                                            <item value="&quot;None&quot;"/>
-                                                            <item value="&quot;SystemAssigned&quot;"/>
-                                                            <item value="&quot;SystemAssigned, UserAssigned&quot;"/>
-                                                            <item value="&quot;UserAssigned&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
+                                                            <item value="&quot;&quot;SystemAssigned&quot;&quot;"/>
+                                                            <item value="&quot;&quot;SystemAssigned, UserAssigned&quot;&quot;"/>
+                                                            <item value="&quot;&quot;UserAssigned&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="object" name="userAssignedIdentities">
@@ -644,7 +644,7 @@
                                                             <prop type="object" name="format">
                                                             <prop type="string" name="type">
                                                             <enum>
-                                                            <item value="&quot;JSON&quot;"/>
+                                                            <item value="&quot;&quot;JSON&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="integer32" name="version">
@@ -653,12 +653,12 @@
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="recordTypes"/>
@@ -693,19 +693,19 @@
                                                           <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="string" name="auxiliaryMode">
                                                             <enum>
-                                                            <item value="&quot;AcceleratedConnections&quot;"/>
-                                                            <item value="&quot;Floating&quot;"/>
-                                                            <item value="&quot;MaxConnections&quot;"/>
-                                                            <item value="&quot;None&quot;"/>
+                                                            <item value="&quot;&quot;AcceleratedConnections&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Floating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;MaxConnections&quot;&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="auxiliarySku">
                                                             <enum>
-                                                            <item value="&quot;A1&quot;"/>
-                                                            <item value="&quot;A2&quot;"/>
-                                                            <item value="&quot;A4&quot;"/>
-                                                            <item value="&quot;A8&quot;"/>
-                                                            <item value="&quot;None&quot;"/>
+                                                            <item value="&quot;&quot;A1&quot;&quot;"/>
+                                                            <item value="&quot;&quot;A2&quot;&quot;"/>
+                                                            <item value="&quot;&quot;A4&quot;&quot;"/>
+                                                            <item value="&quot;&quot;A8&quot;&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="boolean" name="defaultOutboundConnectivityEnabled"/>
@@ -733,18 +733,18 @@
                                                             <prop readOnly="True" type="string" name="macAddress"/>
                                                             <prop type="string" name="migrationPhase">
                                                             <enum>
-                                                            <item value="&quot;Abort&quot;"/>
-                                                            <item value="&quot;Commit&quot;"/>
-                                                            <item value="&quot;Committed&quot;"/>
-                                                            <item value="&quot;None&quot;"/>
-                                                            <item value="&quot;Prepare&quot;"/>
+                                                            <item value="&quot;&quot;Abort&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Commit&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Committed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Prepare&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="@CommonNetworkSecurityGroup_read" name="networkSecurityGroup"/>
                                                             <prop type="string" name="nicType">
                                                             <enum>
-                                                            <item value="&quot;Elastic&quot;"/>
-                                                            <item value="&quot;Standard&quot;"/>
+                                                            <item value="&quot;&quot;Elastic&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Standard&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="boolean" name="primary"/>
@@ -754,7 +754,7 @@
                                                             <prop type="string" name="name"/>
                                                             <prop type="string" name="type">
                                                             <enum>
-                                                            <item value="&quot;EdgeZone&quot;"/>
+                                                            <item value="&quot;&quot;EdgeZone&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             </prop>
@@ -769,8 +769,8 @@
                                                             </prop>
                                                             <prop type="string" name="billingSku">
                                                             <enum>
-                                                            <item value="&quot;Fixed&quot;"/>
-                                                            <item value="&quot;PayAsYouGo&quot;"/>
+                                                            <item value="&quot;&quot;Fixed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;PayAsYouGo&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="array<object>" name="customDnsConfigs">
@@ -795,11 +795,11 @@
                                                             </item>
                                                             </prop>
                                                             <prop type="string" name="ipVersionType">
-                                                            <default value="&quot;IPv4&quot;"/>
+                                                            <default value="&quot;&quot;IPv4&quot;&quot;"/>
                                                             <enum>
-                                                            <item value="&quot;DualStack&quot;"/>
-                                                            <item value="&quot;IPv4&quot;"/>
-                                                            <item value="&quot;IPv6&quot;"/>
+                                                            <item value="&quot;&quot;DualStack&quot;&quot;"/>
+                                                            <item value="&quot;&quot;IPv4&quot;&quot;"/>
+                                                            <item value="&quot;&quot;IPv6&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="array<@CommonPrivateLinkServiceConnection_read>" name="manualPrivateLinkServiceConnections">
@@ -825,12 +825,12 @@
                                                             <prop type="string" name="privateLinkServiceId"/>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="requestMessage"/>
@@ -840,12 +840,12 @@
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="@CommonSubnet_read" name="subnet"/>
@@ -868,8 +868,8 @@
                                                             <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="string" name="accessMode">
                                                             <enum>
-                                                            <item value="&quot;Default&quot;"/>
-                                                            <item value="&quot;Restricted&quot;"/>
+                                                            <item value="&quot;&quot;Default&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Restricted&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="alias"/>
@@ -893,24 +893,24 @@
                                                             <prop type="string" name="privateIPAddress"/>
                                                             <prop type="string" name="privateIPAddressVersion">
                                                             <enum>
-                                                            <item value="&quot;IPv4&quot;"/>
-                                                            <item value="&quot;IPv6&quot;"/>
+                                                            <item value="&quot;&quot;IPv4&quot;&quot;"/>
+                                                            <item value="&quot;&quot;IPv6&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="privateIPAllocationMethod">
                                                             <enum>
-                                                            <item value="&quot;Dynamic&quot;"/>
-                                                            <item value="&quot;Static&quot;"/>
+                                                            <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Static&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="@CommonSubnet_read" name="subnet"/>
@@ -938,12 +938,12 @@
                                                             <prop type="@CommonPrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             </prop>
@@ -952,12 +952,12 @@
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="object" name="visibility">
@@ -975,12 +975,12 @@
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="resourceGuid"/>
@@ -1001,12 +1001,12 @@
                                                       </prop>
                                                       <prop readOnly="True" type="string" name="provisioningState">
                                                         <enum>
-                                                          <item value="&quot;Canceled&quot;"/>
-                                                          <item value="&quot;Creating&quot;"/>
-                                                          <item value="&quot;Deleting&quot;"/>
-                                                          <item value="&quot;Failed&quot;"/>
-                                                          <item value="&quot;Succeeded&quot;"/>
-                                                          <item value="&quot;Updating&quot;"/>
+                                                          <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                         </enum>
                                                       </prop>
                                                       <prop readOnly="True" type="string" name="resourceGuid"/>
@@ -1018,8 +1018,8 @@
                                                           <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="string" name="access" required="True">
                                                             <enum>
-                                                            <item value="&quot;Allow&quot;"/>
-                                                            <item value="&quot;Deny&quot;"/>
+                                                            <item value="&quot;&quot;Allow&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deny&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="description"/>
@@ -1036,29 +1036,29 @@
                                                             </prop>
                                                             <prop type="string" name="direction" required="True">
                                                             <enum>
-                                                            <item value="&quot;Inbound&quot;"/>
-                                                            <item value="&quot;Outbound&quot;"/>
+                                                            <item value="&quot;&quot;Inbound&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Outbound&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="integer32" name="priority" required="True"/>
                                                             <prop type="string" name="protocol" required="True">
                                                             <enum>
-                                                            <item value="&quot;*&quot;"/>
-                                                            <item value="&quot;Ah&quot;"/>
-                                                            <item value="&quot;Esp&quot;"/>
-                                                            <item value="&quot;Icmp&quot;"/>
-                                                            <item value="&quot;Tcp&quot;"/>
-                                                            <item value="&quot;Udp&quot;"/>
+                                                            <item value="&quot;&quot;*&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Ah&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Esp&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Icmp&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Udp&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="sourceAddressPrefix"/>
@@ -1076,12 +1076,12 @@
                                                             <prop type="object" name="properties" clientFlatten="True">
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="resourceGuid"/>
@@ -1114,32 +1114,32 @@
                                                     <prop readOnly="True" type="string" name="type"/>
                                                   </prop>
                                                   <prop type="string" name="privateEndpointNetworkPolicies">
-                                                    <default value="&quot;Disabled&quot;"/>
+                                                    <default value="&quot;&quot;Disabled&quot;&quot;"/>
                                                     <enum>
-                                                      <item value="&quot;Disabled&quot;"/>
-                                                      <item value="&quot;Enabled&quot;"/>
-                                                      <item value="&quot;NetworkSecurityGroupEnabled&quot;"/>
-                                                      <item value="&quot;RouteTableEnabled&quot;"/>
+                                                      <item value="&quot;&quot;Disabled&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Enabled&quot;&quot;"/>
+                                                      <item value="&quot;&quot;NetworkSecurityGroupEnabled&quot;&quot;"/>
+                                                      <item value="&quot;&quot;RouteTableEnabled&quot;&quot;"/>
                                                     </enum>
                                                   </prop>
                                                   <prop readOnly="True" type="array<@CommonPrivateEndpoint_read>" name="privateEndpoints">
                                                     <item type="@CommonPrivateEndpoint_read"/>
                                                   </prop>
                                                   <prop type="string" name="privateLinkServiceNetworkPolicies">
-                                                    <default value="&quot;Enabled&quot;"/>
+                                                    <default value="&quot;&quot;Enabled&quot;&quot;"/>
                                                     <enum>
-                                                      <item value="&quot;Disabled&quot;"/>
-                                                      <item value="&quot;Enabled&quot;"/>
+                                                      <item value="&quot;&quot;Disabled&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Enabled&quot;&quot;"/>
                                                     </enum>
                                                   </prop>
                                                   <prop readOnly="True" type="string" name="provisioningState">
                                                     <enum>
-                                                      <item value="&quot;Canceled&quot;"/>
-                                                      <item value="&quot;Creating&quot;"/>
-                                                      <item value="&quot;Deleting&quot;"/>
-                                                      <item value="&quot;Failed&quot;"/>
-                                                      <item value="&quot;Succeeded&quot;"/>
-                                                      <item value="&quot;Updating&quot;"/>
+                                                      <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                     </enum>
                                                   </prop>
                                                   <prop readOnly="True" type="string" name="purpose"/>
@@ -1153,12 +1153,12 @@
                                                         <prop type="string" name="linkedResourceType"/>
                                                         <prop readOnly="True" type="string" name="provisioningState">
                                                           <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                       </prop>
@@ -1176,18 +1176,18 @@
                                                       <prop type="boolean" name="disableBgpRoutePropagation"/>
                                                       <prop type="string" name="disablePeeringRoute">
                                                         <enum>
-                                                          <item value="&quot;All&quot;"/>
-                                                          <item value="&quot;None&quot;"/>
+                                                          <item value="&quot;&quot;All&quot;&quot;"/>
+                                                          <item value="&quot;&quot;None&quot;&quot;"/>
                                                         </enum>
                                                       </prop>
                                                       <prop readOnly="True" type="string" name="provisioningState">
                                                         <enum>
-                                                          <item value="&quot;Canceled&quot;"/>
-                                                          <item value="&quot;Creating&quot;"/>
-                                                          <item value="&quot;Deleting&quot;"/>
-                                                          <item value="&quot;Failed&quot;"/>
-                                                          <item value="&quot;Succeeded&quot;"/>
-                                                          <item value="&quot;Updating&quot;"/>
+                                                          <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                         </enum>
                                                       </prop>
                                                       <prop readOnly="True" type="string" name="resourceGuid"/>
@@ -1210,22 +1210,22 @@
                                                             <prop type="string" name="nextHopIpAddress"/>
                                                             <prop type="string" name="nextHopType" required="True">
                                                             <enum>
-                                                            <item value="&quot;Internet&quot;"/>
-                                                            <item value="&quot;None&quot;"/>
-                                                            <item value="&quot;VirtualAppliance&quot;"/>
-                                                            <item value="&quot;VirtualApplianceEcmp&quot;"/>
-                                                            <item value="&quot;VirtualNetworkGateway&quot;"/>
-                                                            <item value="&quot;VnetLocal&quot;"/>
+                                                            <item value="&quot;&quot;Internet&quot;&quot;"/>
+                                                            <item value="&quot;&quot;None&quot;&quot;"/>
+                                                            <item value="&quot;&quot;VirtualAppliance&quot;&quot;"/>
+                                                            <item value="&quot;&quot;VirtualApplianceEcmp&quot;&quot;"/>
+                                                            <item value="&quot;&quot;VirtualNetworkGateway&quot;&quot;"/>
+                                                            <item value="&quot;&quot;VnetLocal&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                           </prop>
@@ -1257,12 +1257,12 @@
                                                         </prop>
                                                         <prop readOnly="True" type="string" name="provisioningState">
                                                           <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                       </prop>
@@ -1284,12 +1284,12 @@
                                                         </prop>
                                                         <prop readOnly="True" type="string" name="provisioningState">
                                                           <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                           </enum>
                                                         </prop>
                                                         <prop readOnly="True" type="string" name="resourceGuid"/>
@@ -1305,12 +1305,12 @@
                                                             <prop type="string" name="description"/>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
-                                                            <item value="&quot;Canceled&quot;"/>
-                                                            <item value="&quot;Creating&quot;"/>
-                                                            <item value="&quot;Deleting&quot;"/>
-                                                            <item value="&quot;Failed&quot;"/>
-                                                            <item value="&quot;Succeeded&quot;"/>
-                                                            <item value="&quot;Updating&quot;"/>
+                                                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                             </enum>
                                                             </prop>
                                                             <prop type="string" name="service"/>
@@ -1341,12 +1341,12 @@
                                                       <prop type="@CommonSubResource_read" name="networkIdentifier"/>
                                                       <prop readOnly="True" type="string" name="provisioningState">
                                                         <enum>
-                                                          <item value="&quot;Canceled&quot;"/>
-                                                          <item value="&quot;Creating&quot;"/>
-                                                          <item value="&quot;Deleting&quot;"/>
-                                                          <item value="&quot;Failed&quot;"/>
-                                                          <item value="&quot;Succeeded&quot;"/>
-                                                          <item value="&quot;Updating&quot;"/>
+                                                          <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                          <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                         </enum>
                                                       </prop>
                                                       <prop type="string" name="service"/>
@@ -1355,8 +1355,8 @@
                                                   <prop type="@CommonSubResource_read" name="serviceGateway"/>
                                                   <prop type="string" name="sharingScope">
                                                     <enum>
-                                                      <item value="&quot;DelegatedServices&quot;"/>
-                                                      <item value="&quot;Tenant&quot;"/>
+                                                      <item value="&quot;&quot;DelegatedServices&quot;&quot;"/>
+                                                      <item value="&quot;&quot;Tenant&quot;&quot;"/>
                                                     </enum>
                                                   </prop>
                                                 </prop>
@@ -1380,12 +1380,12 @@
                                               <prop type="object" name="properties" clientFlatten="True">
                                                 <prop readOnly="True" type="string" name="provisioningState">
                                                   <enum>
-                                                    <item value="&quot;Canceled&quot;"/>
-                                                    <item value="&quot;Creating&quot;"/>
-                                                    <item value="&quot;Deleting&quot;"/>
-                                                    <item value="&quot;Failed&quot;"/>
-                                                    <item value="&quot;Succeeded&quot;"/>
-                                                    <item value="&quot;Updating&quot;"/>
+                                                    <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                                    <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                                    <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                                    <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                                    <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                                    <item value="&quot;&quot;Updating&quot;&quot;"/>
                                                   </enum>
                                                 </prop>
                                                 <prop type="@CommonVirtualNetworkTap_read" name="virtualNetworkTap"/>
@@ -1395,12 +1395,12 @@
                                           </prop>
                                           <prop readOnly="True" type="string" name="provisioningState">
                                             <enum>
-                                              <item value="&quot;Canceled&quot;"/>
-                                              <item value="&quot;Creating&quot;"/>
-                                              <item value="&quot;Deleting&quot;"/>
-                                              <item value="&quot;Failed&quot;"/>
-                                              <item value="&quot;Succeeded&quot;"/>
-                                              <item value="&quot;Updating&quot;"/>
+                                              <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                              <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                              <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                              <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                              <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                              <item value="&quot;&quot;Updating&quot;&quot;"/>
                                             </enum>
                                           </prop>
                                           <prop readOnly="True" type="string" name="resourceGuid"/>
@@ -1419,12 +1419,12 @@
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -1449,8 +1449,8 @@
                               </prop>
                               <prop type="string" name="cookieBasedAffinity">
                                 <enum>
-                                  <item value="&quot;Disabled&quot;"/>
-                                  <item value="&quot;Enabled&quot;"/>
+                                  <item value="&quot;&quot;Disabled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Enabled&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="boolean" name="dedicatedBackendConnection"/>
@@ -1462,20 +1462,20 @@
                               <prop type="boolean" name="probeEnabled"/>
                               <prop type="string" name="protocol">
                                 <enum>
-                                  <item value="&quot;Http&quot;"/>
-                                  <item value="&quot;Https&quot;"/>
-                                  <item value="&quot;Tcp&quot;"/>
-                                  <item value="&quot;Tls&quot;"/>
+                                  <item value="&quot;&quot;Http&quot;&quot;"/>
+                                  <item value="&quot;&quot;Https&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tls&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="integer32" name="requestTimeout"/>
@@ -1506,20 +1506,20 @@
                               <prop type="@CommonSubResource_read" name="probe"/>
                               <prop type="string" name="protocol">
                                 <enum>
-                                  <item value="&quot;Http&quot;"/>
-                                  <item value="&quot;Https&quot;"/>
-                                  <item value="&quot;Tcp&quot;"/>
-                                  <item value="&quot;Tls&quot;"/>
+                                  <item value="&quot;&quot;Http&quot;&quot;"/>
+                                  <item value="&quot;&quot;Https&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tls&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="integer32" name="timeout"/>
@@ -1535,11 +1535,11 @@
                         </prop>
                         <prop readOnly="True" type="string" name="defaultPredefinedSslPolicy">
                           <enum>
-                            <item value="&quot;AppGwSslPolicy20150501&quot;"/>
-                            <item value="&quot;AppGwSslPolicy20170401&quot;"/>
-                            <item value="&quot;AppGwSslPolicy20170401S&quot;"/>
-                            <item value="&quot;AppGwSslPolicy20220101&quot;"/>
-                            <item value="&quot;AppGwSslPolicy20220101S&quot;"/>
+                            <item value="&quot;&quot;AppGwSslPolicy20150501&quot;&quot;"/>
+                            <item value="&quot;&quot;AppGwSslPolicy20170401&quot;&quot;"/>
+                            <item value="&quot;&quot;AppGwSslPolicy20170401S&quot;&quot;"/>
+                            <item value="&quot;&quot;AppGwSslPolicy20220101&quot;&quot;"/>
+                            <item value="&quot;&quot;AppGwSslPolicy20220101S&quot;&quot;"/>
                           </enum>
                         </prop>
                         <prop type="boolean" name="enableFips"/>
@@ -1556,19 +1556,19 @@
                               <prop type="string" name="clientId"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="string" name="tenantId"/>
                               <prop type="string" name="unAuthorizedRequestAction">
                                 <enum>
-                                  <item value="&quot;Allow&quot;"/>
-                                  <item value="&quot;Deny&quot;"/>
+                                  <item value="&quot;&quot;Allow&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deny&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -1585,19 +1585,19 @@
                               <prop type="string" name="privateIPAddress"/>
                               <prop type="string" name="privateIPAllocationMethod">
                                 <enum>
-                                  <item value="&quot;Dynamic&quot;"/>
-                                  <item value="&quot;Static&quot;"/>
+                                  <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                  <item value="&quot;&quot;Static&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="@CommonSubResource_read" name="privateLinkConfiguration"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="@CommonSubResource_read" name="publicIPAddress"/>
@@ -1615,12 +1615,12 @@
                               <prop type="integer32" name="port"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -1635,12 +1635,12 @@
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="object" name="subnet" cls="CommonSubResource_read">
@@ -1665,15 +1665,15 @@
                                   <prop type="string" name="customErrorPageUrl"/>
                                   <prop type="string" name="statusCode">
                                     <enum>
-                                      <item value="&quot;HttpStatus400&quot;"/>
-                                      <item value="&quot;HttpStatus403&quot;"/>
-                                      <item value="&quot;HttpStatus404&quot;"/>
-                                      <item value="&quot;HttpStatus405&quot;"/>
-                                      <item value="&quot;HttpStatus408&quot;"/>
-                                      <item value="&quot;HttpStatus500&quot;"/>
-                                      <item value="&quot;HttpStatus502&quot;"/>
-                                      <item value="&quot;HttpStatus503&quot;"/>
-                                      <item value="&quot;HttpStatus504&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus400&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus403&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus404&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus405&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus408&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus500&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus502&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus503&quot;&quot;"/>
+                                      <item value="&quot;&quot;HttpStatus504&quot;&quot;"/>
                                     </enum>
                                   </prop>
                                 </item>
@@ -1687,20 +1687,20 @@
                               </prop>
                               <prop type="string" name="protocol">
                                 <enum>
-                                  <item value="&quot;Http&quot;"/>
-                                  <item value="&quot;Https&quot;"/>
-                                  <item value="&quot;Tcp&quot;"/>
-                                  <item value="&quot;Tls&quot;"/>
+                                  <item value="&quot;&quot;Http&quot;&quot;"/>
+                                  <item value="&quot;&quot;Https&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tls&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="boolean" name="requireServerNameIndication"/>
@@ -1723,20 +1723,20 @@
                               </prop>
                               <prop type="string" name="protocol">
                                 <enum>
-                                  <item value="&quot;Http&quot;"/>
-                                  <item value="&quot;Https&quot;"/>
-                                  <item value="&quot;Tcp&quot;"/>
-                                  <item value="&quot;Tls&quot;"/>
+                                  <item value="&quot;&quot;Http&quot;&quot;"/>
+                                  <item value="&quot;&quot;Https&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tls&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="@CommonSubResource_read" name="sslCertificate"/>
@@ -1753,9 +1753,9 @@
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop type="string" name="loadDistributionAlgorithm">
                                 <enum>
-                                  <item value="&quot;IpHash&quot;"/>
-                                  <item value="&quot;LeastConnections&quot;"/>
-                                  <item value="&quot;RoundRobin&quot;"/>
+                                  <item value="&quot;&quot;IpHash&quot;&quot;"/>
+                                  <item value="&quot;&quot;LeastConnections&quot;&quot;"/>
+                                  <item value="&quot;&quot;RoundRobin&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="array<object>" name="loadDistributionTargets">
@@ -1774,12 +1774,12 @@
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -1788,10 +1788,10 @@
                         </prop>
                         <prop readOnly="True" type="string" name="operationalState">
                           <enum>
-                            <item value="&quot;Running&quot;"/>
-                            <item value="&quot;Starting&quot;"/>
-                            <item value="&quot;Stopped&quot;"/>
-                            <item value="&quot;Stopping&quot;"/>
+                            <item value="&quot;&quot;Running&quot;&quot;"/>
+                            <item value="&quot;&quot;Starting&quot;&quot;"/>
+                            <item value="&quot;&quot;Stopped&quot;&quot;"/>
+                            <item value="&quot;&quot;Stopping&quot;&quot;"/>
                           </enum>
                         </prop>
                         <prop readOnly="True" type="array<object>" name="privateEndpointConnections">
@@ -1807,12 +1807,12 @@
                               <prop type="@CommonPrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -1835,18 +1835,18 @@
                                     <prop type="string" name="privateIPAddress"/>
                                     <prop type="string" name="privateIPAllocationMethod">
                                       <enum>
-                                        <item value="&quot;Dynamic&quot;"/>
-                                        <item value="&quot;Static&quot;"/>
+                                        <item value="&quot;&quot;Dynamic&quot;&quot;"/>
+                                        <item value="&quot;&quot;Static&quot;&quot;"/>
                                       </enum>
                                     </prop>
                                     <prop readOnly="True" type="string" name="provisioningState">
                                       <enum>
-                                        <item value="&quot;Canceled&quot;"/>
-                                        <item value="&quot;Creating&quot;"/>
-                                        <item value="&quot;Deleting&quot;"/>
-                                        <item value="&quot;Failed&quot;"/>
-                                        <item value="&quot;Succeeded&quot;"/>
-                                        <item value="&quot;Updating&quot;"/>
+                                        <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                        <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                        <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                        <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                        <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                        <item value="&quot;&quot;Updating&quot;&quot;"/>
                                       </enum>
                                     </prop>
                                     <prop type="@CommonSubResource_read" name="subnet"/>
@@ -1856,12 +1856,12 @@
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -1892,20 +1892,20 @@
                               </prop>
                               <prop type="string" name="protocol">
                                 <enum>
-                                  <item value="&quot;Http&quot;"/>
-                                  <item value="&quot;Https&quot;"/>
-                                  <item value="&quot;Tcp&quot;"/>
-                                  <item value="&quot;Tls&quot;"/>
+                                  <item value="&quot;&quot;Http&quot;&quot;"/>
+                                  <item value="&quot;&quot;Https&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tcp&quot;&quot;"/>
+                                  <item value="&quot;&quot;Tls&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="integer32" name="timeout"/>
@@ -1916,12 +1916,12 @@
                         </prop>
                         <prop readOnly="True" type="string" name="provisioningState">
                           <enum>
-                            <item value="&quot;Canceled&quot;"/>
-                            <item value="&quot;Creating&quot;"/>
-                            <item value="&quot;Deleting&quot;"/>
-                            <item value="&quot;Failed&quot;"/>
-                            <item value="&quot;Succeeded&quot;"/>
-                            <item value="&quot;Updating&quot;"/>
+                            <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                            <item value="&quot;&quot;Creating&quot;&quot;"/>
+                            <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                            <item value="&quot;&quot;Failed&quot;&quot;"/>
+                            <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                            <item value="&quot;&quot;Updating&quot;&quot;"/>
                           </enum>
                         </prop>
                         <prop type="array<object>" name="redirectConfigurations">
@@ -1937,10 +1937,10 @@
                               </prop>
                               <prop type="string" name="redirectType">
                                 <enum>
-                                  <item value="&quot;Found&quot;"/>
-                                  <item value="&quot;Permanent&quot;"/>
-                                  <item value="&quot;SeeOther&quot;"/>
-                                  <item value="&quot;Temporary&quot;"/>
+                                  <item value="&quot;&quot;Found&quot;&quot;"/>
+                                  <item value="&quot;&quot;Permanent&quot;&quot;"/>
+                                  <item value="&quot;&quot;SeeOther&quot;&quot;"/>
+                                  <item value="&quot;&quot;Temporary&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="array<@CommonSubResource_read>" name="requestRoutingRules">
@@ -1971,20 +1971,20 @@
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="@CommonSubResource_read" name="redirectConfiguration"/>
                               <prop type="@CommonSubResource_read" name="rewriteRuleSet"/>
                               <prop type="string" name="ruleType">
                                 <enum>
-                                  <item value="&quot;Basic&quot;"/>
-                                  <item value="&quot;PathBasedRouting&quot;"/>
+                                  <item value="&quot;&quot;Basic&quot;&quot;"/>
+                                  <item value="&quot;&quot;PathBasedRouting&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="@CommonSubResource_read" name="urlPathMap"/>
@@ -2001,12 +2001,12 @@
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="array<object>" name="rewriteRules">
@@ -2061,18 +2061,18 @@
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="string" name="ruleType">
                                 <enum>
-                                  <item value="&quot;Basic&quot;"/>
-                                  <item value="&quot;PathBasedRouting&quot;"/>
+                                  <item value="&quot;&quot;Basic&quot;&quot;"/>
+                                  <item value="&quot;&quot;PathBasedRouting&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -2083,29 +2083,29 @@
                           <prop type="integer32" name="capacity"/>
                           <prop type="string" name="family">
                             <enum>
-                              <item value="&quot;Generation_1&quot;"/>
-                              <item value="&quot;Generation_2&quot;"/>
+                              <item value="&quot;&quot;Generation_1&quot;&quot;"/>
+                              <item value="&quot;&quot;Generation_2&quot;&quot;"/>
                             </enum>
                           </prop>
                           <prop type="string" name="name">
                             <enum>
-                              <item value="&quot;Basic&quot;"/>
-                              <item value="&quot;Standard_Large&quot;"/>
-                              <item value="&quot;Standard_Medium&quot;"/>
-                              <item value="&quot;Standard_Small&quot;"/>
-                              <item value="&quot;Standard_v2&quot;"/>
-                              <item value="&quot;WAF_Large&quot;"/>
-                              <item value="&quot;WAF_Medium&quot;"/>
-                              <item value="&quot;WAF_v2&quot;"/>
+                              <item value="&quot;&quot;Basic&quot;&quot;"/>
+                              <item value="&quot;&quot;Standard_Large&quot;&quot;"/>
+                              <item value="&quot;&quot;Standard_Medium&quot;&quot;"/>
+                              <item value="&quot;&quot;Standard_Small&quot;&quot;"/>
+                              <item value="&quot;&quot;Standard_v2&quot;&quot;"/>
+                              <item value="&quot;&quot;WAF_Large&quot;&quot;"/>
+                              <item value="&quot;&quot;WAF_Medium&quot;&quot;"/>
+                              <item value="&quot;&quot;WAF_v2&quot;&quot;"/>
                             </enum>
                           </prop>
                           <prop type="string" name="tier">
                             <enum>
-                              <item value="&quot;Basic&quot;"/>
-                              <item value="&quot;Standard&quot;"/>
-                              <item value="&quot;Standard_v2&quot;"/>
-                              <item value="&quot;WAF&quot;"/>
-                              <item value="&quot;WAF_v2&quot;"/>
+                              <item value="&quot;&quot;Basic&quot;&quot;"/>
+                              <item value="&quot;&quot;Standard&quot;&quot;"/>
+                              <item value="&quot;&quot;Standard_v2&quot;&quot;"/>
+                              <item value="&quot;&quot;WAF&quot;&quot;"/>
+                              <item value="&quot;&quot;WAF_v2&quot;&quot;"/>
                             </enum>
                           </prop>
                         </prop>
@@ -2124,12 +2124,12 @@
                               <prop type="string" name="password"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="publicCertData"/>
@@ -2141,69 +2141,69 @@
                           <prop type="array<string>" name="cipherSuites">
                             <item type="string">
                               <enum>
-                                <item value="&quot;TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_DHE_DSS_WITH_AES_128_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_DHE_DSS_WITH_AES_128_CBC_SHA256&quot;"/>
-                                <item value="&quot;TLS_DHE_DSS_WITH_AES_256_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_DHE_DSS_WITH_AES_256_CBC_SHA256&quot;"/>
-                                <item value="&quot;TLS_DHE_RSA_WITH_AES_128_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_DHE_RSA_WITH_AES_128_GCM_SHA256&quot;"/>
-                                <item value="&quot;TLS_DHE_RSA_WITH_AES_256_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_DHE_RSA_WITH_AES_256_GCM_SHA384&quot;"/>
-                                <item value="&quot;TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256&quot;"/>
-                                <item value="&quot;TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256&quot;"/>
-                                <item value="&quot;TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384&quot;"/>
-                                <item value="&quot;TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384&quot;"/>
-                                <item value="&quot;TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256&quot;"/>
-                                <item value="&quot;TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256&quot;"/>
-                                <item value="&quot;TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384&quot;"/>
-                                <item value="&quot;TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_3DES_EDE_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_AES_128_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_AES_128_CBC_SHA256&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_AES_128_GCM_SHA256&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_AES_256_CBC_SHA&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_AES_256_CBC_SHA256&quot;"/>
-                                <item value="&quot;TLS_RSA_WITH_AES_256_GCM_SHA384&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_DSS_WITH_3DES_EDE_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_DSS_WITH_AES_128_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_DSS_WITH_AES_128_CBC_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_DSS_WITH_AES_256_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_DSS_WITH_AES_256_CBC_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_RSA_WITH_AES_128_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_RSA_WITH_AES_128_GCM_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_RSA_WITH_AES_256_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_DHE_RSA_WITH_AES_256_GCM_SHA384&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_3DES_EDE_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_AES_128_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_AES_128_CBC_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_AES_128_GCM_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_AES_256_CBC_SHA&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_AES_256_CBC_SHA256&quot;&quot;"/>
+                                <item value="&quot;&quot;TLS_RSA_WITH_AES_256_GCM_SHA384&quot;&quot;"/>
                               </enum>
                             </item>
                           </prop>
                           <prop type="array<string>" name="disabledSslProtocols">
                             <item type="string">
                               <enum>
-                                <item value="&quot;TLSv1_0&quot;"/>
-                                <item value="&quot;TLSv1_1&quot;"/>
-                                <item value="&quot;TLSv1_2&quot;"/>
-                                <item value="&quot;TLSv1_3&quot;"/>
+                                <item value="&quot;&quot;TLSv1_0&quot;&quot;"/>
+                                <item value="&quot;&quot;TLSv1_1&quot;&quot;"/>
+                                <item value="&quot;&quot;TLSv1_2&quot;&quot;"/>
+                                <item value="&quot;&quot;TLSv1_3&quot;&quot;"/>
                               </enum>
                             </item>
                           </prop>
                           <prop type="string" name="minProtocolVersion">
                             <enum>
-                              <item value="&quot;TLSv1_0&quot;"/>
-                              <item value="&quot;TLSv1_1&quot;"/>
-                              <item value="&quot;TLSv1_2&quot;"/>
-                              <item value="&quot;TLSv1_3&quot;"/>
+                              <item value="&quot;&quot;TLSv1_0&quot;&quot;"/>
+                              <item value="&quot;&quot;TLSv1_1&quot;&quot;"/>
+                              <item value="&quot;&quot;TLSv1_2&quot;&quot;"/>
+                              <item value="&quot;&quot;TLSv1_3&quot;&quot;"/>
                             </enum>
                           </prop>
                           <prop type="string" name="policyName">
                             <enum>
-                              <item value="&quot;AppGwSslPolicy20150501&quot;"/>
-                              <item value="&quot;AppGwSslPolicy20170401&quot;"/>
-                              <item value="&quot;AppGwSslPolicy20170401S&quot;"/>
-                              <item value="&quot;AppGwSslPolicy20220101&quot;"/>
-                              <item value="&quot;AppGwSslPolicy20220101S&quot;"/>
+                              <item value="&quot;&quot;AppGwSslPolicy20150501&quot;&quot;"/>
+                              <item value="&quot;&quot;AppGwSslPolicy20170401&quot;&quot;"/>
+                              <item value="&quot;&quot;AppGwSslPolicy20170401S&quot;&quot;"/>
+                              <item value="&quot;&quot;AppGwSslPolicy20220101&quot;&quot;"/>
+                              <item value="&quot;&quot;AppGwSslPolicy20220101S&quot;&quot;"/>
                             </enum>
                           </prop>
                           <prop type="string" name="policyType">
                             <enum>
-                              <item value="&quot;Custom&quot;"/>
-                              <item value="&quot;CustomV2&quot;"/>
-                              <item value="&quot;Predefined&quot;"/>
+                              <item value="&quot;&quot;Custom&quot;&quot;"/>
+                              <item value="&quot;&quot;CustomV2&quot;&quot;"/>
+                              <item value="&quot;&quot;Predefined&quot;&quot;"/>
                             </enum>
                           </prop>
                         </prop>
@@ -2216,26 +2216,26 @@
                               <prop type="object" name="clientAuthConfiguration">
                                 <prop type="string" name="verifyClientAuthMode">
                                   <enum>
-                                    <item value="&quot;Passthrough&quot;"/>
-                                    <item value="&quot;Strict&quot;"/>
+                                    <item value="&quot;&quot;Passthrough&quot;&quot;"/>
+                                    <item value="&quot;&quot;Strict&quot;&quot;"/>
                                   </enum>
                                 </prop>
                                 <prop type="boolean" name="verifyClientCertIssuerDN"/>
                                 <prop type="string" name="verifyClientRevocation">
                                   <enum>
-                                    <item value="&quot;None&quot;"/>
-                                    <item value="&quot;OCSP&quot;"/>
+                                    <item value="&quot;&quot;None&quot;&quot;"/>
+                                    <item value="&quot;&quot;OCSP&quot;&quot;"/>
                                   </enum>
                                 </prop>
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop type="@ApplicationGatewaySslPolicy_read" name="sslPolicy"/>
@@ -2256,12 +2256,12 @@
                               <prop type="string" name="data"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                               <prop readOnly="True" type="string" name="validatedCertData"/>
@@ -2279,12 +2279,12 @@
                               <prop type="string" name="keyVaultSecretId"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -2317,12 +2317,12 @@
                                     </prop>
                                     <prop readOnly="True" type="string" name="provisioningState">
                                       <enum>
-                                        <item value="&quot;Canceled&quot;"/>
-                                        <item value="&quot;Creating&quot;"/>
-                                        <item value="&quot;Deleting&quot;"/>
-                                        <item value="&quot;Failed&quot;"/>
-                                        <item value="&quot;Succeeded&quot;"/>
-                                        <item value="&quot;Updating&quot;"/>
+                                        <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                        <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                        <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                        <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                        <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                        <item value="&quot;&quot;Updating&quot;&quot;"/>
                                       </enum>
                                     </prop>
                                     <prop type="@CommonSubResource_read" name="redirectConfiguration"/>
@@ -2333,12 +2333,12 @@
                               </prop>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
-                                  <item value="&quot;Canceled&quot;"/>
-                                  <item value="&quot;Creating&quot;"/>
-                                  <item value="&quot;Deleting&quot;"/>
-                                  <item value="&quot;Failed&quot;"/>
-                                  <item value="&quot;Succeeded&quot;"/>
-                                  <item value="&quot;Updating&quot;"/>
+                                  <item value="&quot;&quot;Canceled&quot;&quot;"/>
+                                  <item value="&quot;&quot;Creating&quot;&quot;"/>
+                                  <item value="&quot;&quot;Deleting&quot;&quot;"/>
+                                  <item value="&quot;&quot;Failed&quot;&quot;"/>
+                                  <item value="&quot;&quot;Succeeded&quot;&quot;"/>
+                                  <item value="&quot;&quot;Updating&quot;&quot;"/>
                                 </enum>
                               </prop>
                             </prop>
@@ -2367,8 +2367,8 @@
                           </prop>
                           <prop type="string" name="firewallMode" required="True">
                             <enum>
-                              <item value="&quot;Detection&quot;"/>
-                              <item value="&quot;Prevention&quot;"/>
+                              <item value="&quot;&quot;Detection&quot;&quot;"/>
+                              <item value="&quot;&quot;Prevention&quot;&quot;"/>
                             </enum>
                           </prop>
                           <prop type="integer32" name="maxRequestBodySize">

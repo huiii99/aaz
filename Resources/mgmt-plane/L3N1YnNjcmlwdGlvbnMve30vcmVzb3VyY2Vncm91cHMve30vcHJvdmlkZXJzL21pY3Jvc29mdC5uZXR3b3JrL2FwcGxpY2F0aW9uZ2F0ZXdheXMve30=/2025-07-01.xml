@@ -2655,7 +2655,7 @@
         <arg type="boolean" var="$resource.properties.enableHttp2" options="enable-http2" group="Properties">
           <help short="Whether HTTP2 is enabled on the application gateway resource."/>
         </arg>
-        <arg type="array<object>" var="$resource.properties.entraJWTValidationConfigs" options="entra-jwt-validation-configs" group="Properties">
+        <arg type="array<object>" var="$resource.properties.entraJWTValidationConfigs" options="entra-jwt-validation-configs entra-jwt-configs" group="Properties">
           <help short="Entra JWT validation configurations for the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits)."/>
           <item type="object">
             <arg type="string" var="$resource.properties.entraJWTValidationConfigs[].id" options="id">
@@ -6876,7 +6876,7 @@
             </arg>
           </item>
         </arg>
-        <arg nullable="True" type="array<object>" var="$resource.properties.entraJWTValidationConfigs" options="entra-jwt-validation-configs" group="Properties">
+        <arg nullable="True" type="array<object>" var="$resource.properties.entraJWTValidationConfigs" options="entra-jwt-validation-configs entra-jwt-configs" group="Properties">
           <help short="Entra JWT validation configurations for the application gateway resource. For default limits, see [Application Gateway limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits)."/>
           <item nullable="True" type="object">
             <arg nullable="True" type="string" var="$resource.properties.entraJWTValidationConfigs[].id" options="id">
