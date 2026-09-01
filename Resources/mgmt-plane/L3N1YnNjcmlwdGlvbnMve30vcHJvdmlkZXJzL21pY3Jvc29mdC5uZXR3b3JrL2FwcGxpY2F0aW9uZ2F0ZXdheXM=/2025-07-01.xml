@@ -28,9 +28,7 @@
         <http path="/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGateways">
           <request method="get">
             <path>
-              <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True">
-                <format minLength="1"/>
-              </param>
+              <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
             </path>
             <query>
               <const readOnly="True" const="True" type="string" name="api-version" required="True">
@@ -47,8 +45,10 @@
                   <prop type="array<object>" name="value" required="True">
                     <item type="object">
                       <prop readOnly="True" type="string" name="etag"/>
-                      <prop type="string" name="id"/>
-                      <prop type="@CommonManagedServiceIdentity_read" name="identity"/>
+                      <prop type="ResourceId" name="id">
+                        <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/applicationGateways/{}"/>
+                      </prop>
+                      <prop type="@ManagedServiceIdentity_read" name="identity"/>
                       <prop type="ResourceLocation" name="location"/>
                       <prop readOnly="True" type="string" name="name"/>
                       <prop type="object" name="properties" clientFlatten="True">
@@ -82,7 +82,7 @@
                           </prop>
                         </prop>
                         <prop type="array<object>" name="backendAddressPools">
-                          <item type="object" cls="CommonApplicationGatewayBackendAddressPool_read">
+                          <item type="object" cls="ApplicationGatewayBackendAddressPool_read">
                             <prop readOnly="True" type="string" name="etag"/>
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
@@ -94,30 +94,34 @@
                                 </item>
                               </prop>
                               <prop readOnly="True" type="array<object>" name="backendIPConfigurations">
-                                <item type="object" cls="CommonNetworkInterfaceIPConfiguration_read">
+                                <item type="object" cls="NetworkInterfaceIPConfiguration_read">
                                   <prop readOnly="True" type="string" name="etag"/>
-                                  <prop type="string" name="id"/>
+                                  <prop type="ResourceId" name="id">
+                                    <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/networkInterfaces/{}/ipConfigurations/{}"/>
+                                  </prop>
                                   <prop type="string" name="name"/>
                                   <prop type="object" name="properties" clientFlatten="True">
-                                    <prop type="array<@CommonApplicationGatewayBackendAddressPool_read>" name="applicationGatewayBackendAddressPools">
-                                      <item type="@CommonApplicationGatewayBackendAddressPool_read"/>
+                                    <prop type="array<@ApplicationGatewayBackendAddressPool_read>" name="applicationGatewayBackendAddressPools">
+                                      <item type="@ApplicationGatewayBackendAddressPool_read"/>
                                     </prop>
-                                    <prop type="array<@CommonApplicationSecurityGroup_read>" name="applicationSecurityGroups">
-                                      <item type="@CommonApplicationSecurityGroup_read"/>
+                                    <prop type="array<@ApplicationSecurityGroup_read>" name="applicationSecurityGroups">
+                                      <item type="@ApplicationSecurityGroup_read"/>
                                     </prop>
-                                    <prop type="@CommonSubResource_read" name="gatewayLoadBalancer"/>
+                                    <prop type="@SubResource_read" name="gatewayLoadBalancer"/>
                                     <prop type="array<object>" name="loadBalancerBackendAddressPools">
                                       <item type="object">
                                         <prop readOnly="True" type="string" name="etag"/>
-                                        <prop type="string" name="id"/>
+                                        <prop type="ResourceId" name="id">
+                                          <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/loadBalancers/{}/backendAddressPools/{}"/>
+                                        </prop>
                                         <prop type="string" name="name"/>
                                         <prop type="object" name="properties" clientFlatten="True">
-                                          <prop readOnly="True" type="array<@CommonNetworkInterfaceIPConfiguration_read>" name="backendIPConfigurations">
-                                            <item type="@CommonNetworkInterfaceIPConfiguration_read"/>
+                                          <prop readOnly="True" type="array<@NetworkInterfaceIPConfiguration_read>" name="backendIPConfigurations">
+                                            <item type="@NetworkInterfaceIPConfiguration_read"/>
                                           </prop>
                                           <prop type="integer32" name="drainPeriodInSeconds"/>
-                                          <prop readOnly="True" type="array<@CommonSubResource_read>" name="inboundNatRules">
-                                            <item type="@CommonSubResource_read"/>
+                                          <prop readOnly="True" type="array<@SubResource_read>" name="inboundNatRules">
+                                            <item type="@SubResource_read"/>
                                           </prop>
                                           <prop type="array<object>" name="loadBalancerBackendAddresses">
                                             <item type="object">
@@ -138,20 +142,20 @@
                                                   </item>
                                                 </prop>
                                                 <prop type="string" name="ipAddress"/>
-                                                <prop type="@CommonSubResource_read" name="loadBalancerFrontendIPConfiguration"/>
-                                                <prop readOnly="True" type="@CommonSubResource_read" name="networkInterfaceIPConfiguration"/>
-                                                <prop type="@CommonSubResource_read" name="subnet"/>
-                                                <prop type="@CommonSubResource_read" name="virtualNetwork"/>
+                                                <prop type="@SubResource_read" name="loadBalancerFrontendIPConfiguration"/>
+                                                <prop readOnly="True" type="@SubResource_read" name="networkInterfaceIPConfiguration"/>
+                                                <prop type="@SubResource_read" name="subnet"/>
+                                                <prop type="@SubResource_read" name="virtualNetwork"/>
                                               </prop>
                                             </item>
                                           </prop>
-                                          <prop readOnly="True" type="array<@CommonSubResource_read>" name="loadBalancingRules">
-                                            <item type="@CommonSubResource_read"/>
+                                          <prop readOnly="True" type="array<@SubResource_read>" name="loadBalancingRules">
+                                            <item type="@SubResource_read"/>
                                           </prop>
                                           <prop type="string" name="location"/>
-                                          <prop readOnly="True" type="@CommonSubResource_read" name="outboundRule"/>
-                                          <prop readOnly="True" type="array<@CommonSubResource_read>" name="outboundRules">
-                                            <item type="@CommonSubResource_read"/>
+                                          <prop readOnly="True" type="@SubResource_read" name="outboundRule"/>
+                                          <prop readOnly="True" type="array<@SubResource_read>" name="outboundRules">
+                                            <item type="@SubResource_read"/>
                                           </prop>
                                           <prop readOnly="True" type="string" name="provisioningState">
                                             <enum>
@@ -189,7 +193,7 @@
                                               </prop>
                                             </item>
                                           </prop>
-                                          <prop type="@CommonSubResource_read" name="virtualNetwork"/>
+                                          <prop type="@SubResource_read" name="virtualNetwork"/>
                                         </prop>
                                         <prop readOnly="True" type="string" name="type"/>
                                       </item>
@@ -197,15 +201,17 @@
                                     <prop type="array<object>" name="loadBalancerInboundNatRules">
                                       <item type="object">
                                         <prop readOnly="True" type="string" name="etag"/>
-                                        <prop type="string" name="id"/>
+                                        <prop type="ResourceId" name="id">
+                                          <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/loadBalancers/{}/inboundNatRules/{}"/>
+                                        </prop>
                                         <prop type="string" name="name"/>
                                         <prop type="object" name="properties" clientFlatten="True">
-                                          <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                                          <prop readOnly="True" type="@CommonNetworkInterfaceIPConfiguration_read" name="backendIPConfiguration"/>
+                                          <prop type="@SubResource_read" name="backendAddressPool"/>
+                                          <prop readOnly="True" type="@NetworkInterfaceIPConfiguration_read" name="backendIPConfiguration"/>
                                           <prop type="integer32" name="backendPort"/>
                                           <prop type="boolean" name="enableFloatingIP"/>
                                           <prop type="boolean" name="enableTcpReset"/>
-                                          <prop type="@CommonSubResource_read" name="frontendIPConfiguration"/>
+                                          <prop type="@SubResource_read" name="frontendIPConfiguration"/>
                                           <prop type="integer32" name="frontendPort"/>
                                           <prop type="integer32" name="frontendPortRangeEnd"/>
                                           <prop type="integer32" name="frontendPortRangeStart"/>
@@ -266,35 +272,39 @@
                                         <item value="&quot;Updating&quot;"/>
                                       </enum>
                                     </prop>
-                                    <prop type="@CommonPublicIPAddress_read" name="publicIPAddress"/>
-                                    <prop type="@CommonSubnet_read" name="subnet"/>
+                                    <prop type="@PublicIPAddress_read" name="publicIPAddress"/>
+                                    <prop type="@Subnet_read" name="subnet"/>
                                     <prop type="array<object>" name="virtualNetworkTaps">
-                                      <item type="object" cls="CommonVirtualNetworkTap_read">
+                                      <item type="object" cls="VirtualNetworkTap_read">
                                         <prop readOnly="True" type="string" name="etag"/>
-                                        <prop type="string" name="id"/>
+                                        <prop type="ResourceId" name="id">
+                                          <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworkTaps/{}"/>
+                                        </prop>
                                         <prop type="ResourceLocation" name="location"/>
                                         <prop readOnly="True" type="string" name="name"/>
                                         <prop type="object" name="properties" clientFlatten="True">
-                                          <prop type="object" name="destinationLoadBalancerFrontEndIPConfiguration" cls="CommonFrontendIPConfiguration_read">
+                                          <prop type="object" name="destinationLoadBalancerFrontEndIPConfiguration" cls="FrontendIPConfiguration_read">
                                             <prop readOnly="True" type="string" name="etag"/>
-                                            <prop type="string" name="id"/>
+                                            <prop type="ResourceId" name="id">
+                                              <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/loadBalancers/{}/frontendIPConfigurations/{}"/>
+                                            </prop>
                                             <prop type="string" name="name"/>
                                             <prop type="object" name="properties" clientFlatten="True">
                                               <prop type="object" name="ddosSettings">
-                                                <prop type="@CommonSubResource_read" name="ddosCustomPolicy"/>
+                                                <prop type="@SubResource_read" name="ddosCustomPolicy"/>
                                               </prop>
-                                              <prop type="@CommonSubResource_read" name="gatewayLoadBalancer"/>
-                                              <prop readOnly="True" type="array<@CommonSubResource_read>" name="inboundNatPools">
-                                                <item type="@CommonSubResource_read"/>
+                                              <prop type="@SubResource_read" name="gatewayLoadBalancer"/>
+                                              <prop readOnly="True" type="array<@SubResource_read>" name="inboundNatPools">
+                                                <item type="@SubResource_read"/>
                                               </prop>
-                                              <prop readOnly="True" type="array<@CommonSubResource_read>" name="inboundNatRules">
-                                                <item type="@CommonSubResource_read"/>
+                                              <prop readOnly="True" type="array<@SubResource_read>" name="inboundNatRules">
+                                                <item type="@SubResource_read"/>
                                               </prop>
-                                              <prop readOnly="True" type="array<@CommonSubResource_read>" name="loadBalancingRules">
-                                                <item type="@CommonSubResource_read"/>
+                                              <prop readOnly="True" type="array<@SubResource_read>" name="loadBalancingRules">
+                                                <item type="@SubResource_read"/>
                                               </prop>
-                                              <prop readOnly="True" type="array<@CommonSubResource_read>" name="outboundRules">
-                                                <item type="@CommonSubResource_read"/>
+                                              <prop readOnly="True" type="array<@SubResource_read>" name="outboundRules">
+                                                <item type="@SubResource_read"/>
                                               </prop>
                                               <prop type="string" name="privateIPAddress"/>
                                               <prop type="string" name="privateIPAddressVersion">
@@ -319,19 +329,21 @@
                                                   <item value="&quot;Updating&quot;"/>
                                                 </enum>
                                               </prop>
-                                              <prop type="@CommonPublicIPAddress_read" name="publicIPAddress"/>
-                                              <prop type="@CommonSubResource_read" name="publicIPPrefix"/>
-                                              <prop type="object" name="subnet" cls="CommonSubnet_read">
+                                              <prop type="@PublicIPAddress_read" name="publicIPAddress"/>
+                                              <prop type="@SubResource_read" name="publicIPPrefix"/>
+                                              <prop type="object" name="subnet" cls="Subnet_read">
                                                 <prop readOnly="True" type="string" name="etag"/>
-                                                <prop type="string" name="id"/>
+                                                <prop type="ResourceId" name="id">
+                                                  <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/virtualNetworks/{}/subnets/{}"/>
+                                                </prop>
                                                 <prop type="string" name="name"/>
                                                 <prop type="object" name="properties" clientFlatten="True">
                                                   <prop type="string" name="addressPrefix"/>
                                                   <prop type="array<string>" name="addressPrefixes">
                                                     <item type="string"/>
                                                   </prop>
-                                                  <prop type="array<@CommonApplicationGatewayIPConfiguration_read>" name="applicationGatewayIPConfigurations">
-                                                    <item type="@CommonApplicationGatewayIPConfiguration_read"/>
+                                                  <prop type="array<@ApplicationGatewayIPConfiguration_read>" name="applicationGatewayIPConfigurations">
+                                                    <item type="@ApplicationGatewayIPConfiguration_read"/>
                                                   </prop>
                                                   <prop type="boolean" name="defaultOutboundAccess"/>
                                                   <prop type="array<object>" name="delegations">
@@ -358,8 +370,8 @@
                                                       <prop type="string" name="type"/>
                                                     </item>
                                                   </prop>
-                                                  <prop type="array<@CommonSubResource_read>" name="ipAllocations">
-                                                    <item type="@CommonSubResource_read"/>
+                                                  <prop type="array<@SubResource_read>" name="ipAllocations">
+                                                    <item type="@SubResource_read"/>
                                                   </prop>
                                                   <prop readOnly="True" type="array<object>" name="ipConfigurationProfiles">
                                                     <item type="object">
@@ -377,13 +389,13 @@
                                                             <item value="&quot;Updating&quot;"/>
                                                           </enum>
                                                         </prop>
-                                                        <prop type="@CommonSubnet_read" name="subnet"/>
+                                                        <prop type="@Subnet_read" name="subnet"/>
                                                       </prop>
                                                       <prop readOnly="True" type="string" name="type"/>
                                                     </item>
                                                   </prop>
                                                   <prop readOnly="True" type="array<object>" name="ipConfigurations">
-                                                    <item type="object" cls="CommonIPConfiguration_read">
+                                                    <item type="object" cls="IPConfiguration_read">
                                                       <prop readOnly="True" type="string" name="etag"/>
                                                       <prop type="string" name="id"/>
                                                       <prop type="string" name="name"/>
@@ -405,16 +417,16 @@
                                                             <item value="&quot;Updating&quot;"/>
                                                           </enum>
                                                         </prop>
-                                                        <prop type="object" name="publicIPAddress" cls="CommonPublicIPAddress_read">
+                                                        <prop type="object" name="publicIPAddress" cls="PublicIPAddress_read">
                                                           <prop readOnly="True" type="string" name="etag"/>
-                                                          <prop type="@CommonExtendedLocation_read" name="extendedLocation"/>
-                                                          <prop type="string" name="id"/>
+                                                          <prop type="@ExtendedLocation_read" name="extendedLocation"/>
+                                                          <prop type="ResourceId" name="id"/>
                                                           <prop type="ResourceLocation" name="location"/>
                                                           <prop readOnly="True" type="string" name="name"/>
                                                           <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="object" name="ddosSettings">
-                                                            <prop type="@CommonSubResource_read" name="ddosCustomPolicy"/>
-                                                            <prop type="@CommonSubResource_read" name="ddosProtectionPlan"/>
+                                                            <prop type="@SubResource_read" name="ddosCustomPolicy"/>
+                                                            <prop type="@SubResource_read" name="ddosProtectionPlan"/>
                                                             <prop type="string" name="protectionMode">
                                                             <enum>
                                                             <item value="&quot;Disabled&quot;"/>
@@ -444,14 +456,14 @@
                                                             </prop>
                                                             <prop type="integer32" name="idleTimeoutInMinutes"/>
                                                             <prop type="string" name="ipAddress"/>
-                                                            <prop readOnly="True" type="@CommonIPConfiguration_read" name="ipConfiguration"/>
+                                                            <prop readOnly="True" type="@IPConfiguration_read" name="ipConfiguration"/>
                                                             <prop type="array<object>" name="ipTags">
                                                             <item type="object">
                                                             <prop type="string" name="ipTagType"/>
                                                             <prop type="string" name="tag"/>
                                                             </item>
                                                             </prop>
-                                                            <prop type="@CommonPublicIPAddress_read" name="linkedPublicIPAddress"/>
+                                                            <prop type="@PublicIPAddress_read" name="linkedPublicIPAddress"/>
                                                             <prop type="string" name="migrationPhase">
                                                             <enum>
                                                             <item value="&quot;Abort&quot;"/>
@@ -463,7 +475,9 @@
                                                             </prop>
                                                             <prop type="object" name="natGateway">
                                                             <prop readOnly="True" type="string" name="etag"/>
-                                                            <prop type="string" name="id"/>
+                                                            <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/natGateways/{}"/>
+                                                            </prop>
                                                             <prop type="ResourceLocation" name="location"/>
                                                             <prop readOnly="True" type="string" name="name"/>
                                                             <prop type="object" name="properties" clientFlatten="True">
@@ -485,23 +499,23 @@
                                                             <item value="&quot;Updating&quot;"/>
                                                             </enum>
                                                             </prop>
-                                                            <prop type="array<@CommonSubResource_read>" name="publicIpAddresses">
-                                                            <item type="@CommonSubResource_read"/>
+                                                            <prop type="array<@SubResource_read>" name="publicIpAddresses">
+                                                            <item type="@SubResource_read"/>
                                                             </prop>
-                                                            <prop type="array<@CommonSubResource_read>" name="publicIpAddressesV6">
-                                                            <item type="@CommonSubResource_read"/>
+                                                            <prop type="array<@SubResource_read>" name="publicIpAddressesV6">
+                                                            <item type="@SubResource_read"/>
                                                             </prop>
-                                                            <prop type="array<@CommonSubResource_read>" name="publicIpPrefixes">
-                                                            <item type="@CommonSubResource_read"/>
+                                                            <prop type="array<@SubResource_read>" name="publicIpPrefixes">
+                                                            <item type="@SubResource_read"/>
                                                             </prop>
-                                                            <prop type="array<@CommonSubResource_read>" name="publicIpPrefixesV6">
-                                                            <item type="@CommonSubResource_read"/>
+                                                            <prop type="array<@SubResource_read>" name="publicIpPrefixesV6">
+                                                            <item type="@SubResource_read"/>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="resourceGuid"/>
-                                                            <prop type="@CommonSubResource_read" name="serviceGateway"/>
-                                                            <prop type="@CommonSubResource_read" name="sourceVirtualNetwork"/>
-                                                            <prop readOnly="True" type="array<@CommonSubResource_read>" name="subnets">
-                                                            <item type="@CommonSubResource_read"/>
+                                                            <prop type="@SubResource_read" name="serviceGateway"/>
+                                                            <prop type="@SubResource_read" name="sourceVirtualNetwork"/>
+                                                            <prop readOnly="True" type="array<@SubResource_read>" name="subnets">
+                                                            <item type="@SubResource_read"/>
                                                             </prop>
                                                             </prop>
                                                             <prop type="object" name="sku">
@@ -544,9 +558,9 @@
                                                             <item value="&quot;Static&quot;"/>
                                                             </enum>
                                                             </prop>
-                                                            <prop type="@CommonSubResource_read" name="publicIPPrefix"/>
+                                                            <prop type="@SubResource_read" name="publicIPPrefix"/>
                                                             <prop readOnly="True" type="string" name="resourceGuid"/>
-                                                            <prop type="@CommonPublicIPAddress_read" name="servicePublicIPAddress"/>
+                                                            <prop type="@PublicIPAddress_read" name="servicePublicIPAddress"/>
                                                           </prop>
                                                           <prop type="object" name="sku">
                                                             <prop type="string" name="name">
@@ -573,7 +587,7 @@
                                                             <item type="string"/>
                                                           </prop>
                                                         </prop>
-                                                        <prop type="@CommonSubnet_read" name="subnet"/>
+                                                        <prop type="@Subnet_read" name="subnet"/>
                                                       </prop>
                                                     </item>
                                                   </prop>
@@ -588,21 +602,25 @@
                                                       </prop>
                                                     </item>
                                                   </prop>
-                                                  <prop type="@CommonSubResource_read" name="natGateway"/>
-                                                  <prop type="object" name="networkSecurityGroup" cls="CommonNetworkSecurityGroup_read">
+                                                  <prop type="@SubResource_read" name="natGateway"/>
+                                                  <prop type="object" name="networkSecurityGroup" cls="NetworkSecurityGroup_read">
                                                     <prop readOnly="True" type="string" name="etag"/>
-                                                    <prop type="string" name="id"/>
+                                                    <prop type="ResourceId" name="id">
+                                                      <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/networkSecurityGroups/{}"/>
+                                                    </prop>
                                                     <prop type="ResourceLocation" name="location"/>
                                                     <prop readOnly="True" type="string" name="name"/>
                                                     <prop type="object" name="properties" clientFlatten="True">
-                                                      <prop readOnly="True" type="array<@CommonSecurityRule_read>" name="defaultSecurityRules">
-                                                        <item type="@CommonSecurityRule_read"/>
+                                                      <prop readOnly="True" type="array<@SecurityRule_read>" name="defaultSecurityRules">
+                                                        <item type="@SecurityRule_read"/>
                                                       </prop>
                                                       <prop readOnly="True" type="array<object>" name="flowLogs">
                                                         <item type="object">
                                                           <prop readOnly="True" type="string" name="etag"/>
-                                                          <prop type="string" name="id"/>
-                                                          <prop type="IdentityObject" name="identity" cls="CommonManagedServiceIdentity_read">
+                                                          <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/networkWatchers/{}/flowLogs/{}"/>
+                                                          </prop>
+                                                          <prop type="IdentityObject" name="identity" cls="ManagedServiceIdentity_read">
                                                             <prop readOnly="True" type="string" name="principalId"/>
                                                             <prop readOnly="True" type="string" name="tenantId"/>
                                                             <prop type="string" name="type">
@@ -679,10 +697,10 @@
                                                       </prop>
                                                       <prop type="boolean" name="flushConnection"/>
                                                       <prop readOnly="True" type="array<object>" name="networkInterfaces">
-                                                        <item type="object" cls="CommonNetworkInterface_read">
+                                                        <item type="object" cls="NetworkInterface_read">
                                                           <prop readOnly="True" type="string" name="etag"/>
-                                                          <prop type="@CommonExtendedLocation_read" name="extendedLocation"/>
-                                                          <prop type="string" name="id"/>
+                                                          <prop type="@ExtendedLocation_read" name="extendedLocation"/>
+                                                          <prop type="ResourceId" name="id"/>
                                                           <prop type="ResourceLocation" name="location"/>
                                                           <prop readOnly="True" type="string" name="name"/>
                                                           <prop type="object" name="properties" clientFlatten="True">
@@ -716,14 +734,14 @@
                                                             <prop readOnly="True" type="string" name="internalDomainNameSuffix"/>
                                                             <prop readOnly="True" type="string" name="internalFqdn"/>
                                                             </prop>
-                                                            <prop readOnly="True" type="@CommonSubResource_read" name="dscpConfiguration"/>
+                                                            <prop readOnly="True" type="@SubResource_read" name="dscpConfiguration"/>
                                                             <prop type="boolean" name="enableAcceleratedNetworking"/>
                                                             <prop type="boolean" name="enableIPForwarding"/>
                                                             <prop readOnly="True" type="array<string>" name="hostedWorkloads">
                                                             <item type="string"/>
                                                             </prop>
-                                                            <prop type="array<@CommonNetworkInterfaceIPConfiguration_read>" name="ipConfigurations">
-                                                            <item type="@CommonNetworkInterfaceIPConfiguration_read"/>
+                                                            <prop type="array<@NetworkInterfaceIPConfiguration_read>" name="ipConfigurations">
+                                                            <item type="@NetworkInterfaceIPConfiguration_read"/>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="macAddress"/>
                                                             <prop type="string" name="migrationPhase">
@@ -735,7 +753,7 @@
                                                             <item value="&quot;Prepare&quot;"/>
                                                             </enum>
                                                             </prop>
-                                                            <prop type="@CommonNetworkSecurityGroup_read" name="networkSecurityGroup"/>
+                                                            <prop type="@NetworkSecurityGroup_read" name="networkSecurityGroup"/>
                                                             <prop type="string" name="nicType">
                                                             <enum>
                                                             <item value="&quot;Elastic&quot;"/>
@@ -743,9 +761,9 @@
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="boolean" name="primary"/>
-                                                            <prop readOnly="True" type="object" name="privateEndpoint" cls="CommonPrivateEndpoint_read">
+                                                            <prop readOnly="True" type="object" name="privateEndpoint" cls="PrivateEndpoint_read">
                                                             <prop readOnly="True" type="string" name="etag"/>
-                                                            <prop type="object" name="extendedLocation" cls="CommonExtendedLocation_read">
+                                                            <prop type="object" name="extendedLocation" cls="ExtendedLocation_read">
                                                             <prop type="string" name="name"/>
                                                             <prop type="string" name="type">
                                                             <enum>
@@ -753,12 +771,14 @@
                                                             </enum>
                                                             </prop>
                                                             </prop>
-                                                            <prop type="string" name="id"/>
+                                                            <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/privateEndpoints/{}"/>
+                                                            </prop>
                                                             <prop type="ResourceLocation" name="location"/>
                                                             <prop readOnly="True" type="string" name="name"/>
                                                             <prop type="object" name="properties" clientFlatten="True">
-                                                            <prop type="array<@CommonApplicationSecurityGroup_read>" name="applicationSecurityGroups">
-                                                            <item type="@CommonApplicationSecurityGroup_read"/>
+                                                            <prop type="array<@ApplicationSecurityGroup_read>" name="applicationSecurityGroups">
+                                                            <item type="@ApplicationSecurityGroup_read"/>
                                                             </prop>
                                                             <prop type="string" name="billingSku">
                                                             <enum>
@@ -795,14 +815,14 @@
                                                             <item value="&quot;IPv6&quot;"/>
                                                             </enum>
                                                             </prop>
-                                                            <prop type="array<@CommonPrivateLinkServiceConnection_read>" name="manualPrivateLinkServiceConnections">
-                                                            <item type="@CommonPrivateLinkServiceConnection_read"/>
+                                                            <prop type="array<@PrivateLinkServiceConnection_read>" name="manualPrivateLinkServiceConnections">
+                                                            <item type="@PrivateLinkServiceConnection_read"/>
                                                             </prop>
-                                                            <prop readOnly="True" type="array<@CommonNetworkInterface_read>" name="networkInterfaces">
-                                                            <item type="@CommonNetworkInterface_read"/>
+                                                            <prop readOnly="True" type="array<@NetworkInterface_read>" name="networkInterfaces">
+                                                            <item type="@NetworkInterface_read"/>
                                                             </prop>
                                                             <prop type="array<object>" name="privateLinkServiceConnections">
-                                                            <item type="object" cls="CommonPrivateLinkServiceConnection_read">
+                                                            <item type="object" cls="PrivateLinkServiceConnection_read">
                                                             <prop readOnly="True" type="string" name="etag"/>
                                                             <prop type="string" name="id"/>
                                                             <prop type="string" name="name"/>
@@ -810,7 +830,7 @@
                                                             <prop type="array<string>" name="groupIds">
                                                             <item type="string"/>
                                                             </prop>
-                                                            <prop type="object" name="privateLinkServiceConnectionState" cls="CommonPrivateLinkServiceConnectionState_read">
+                                                            <prop type="object" name="privateLinkServiceConnectionState" cls="PrivateLinkServiceConnectionState_read">
                                                             <prop type="string" name="actionsRequired"/>
                                                             <prop type="string" name="description"/>
                                                             <prop type="string" name="status"/>
@@ -841,7 +861,7 @@
                                                             <item value="&quot;Updating&quot;"/>
                                                             </enum>
                                                             </prop>
-                                                            <prop type="@CommonSubnet_read" name="subnet"/>
+                                                            <prop type="@Subnet_read" name="subnet"/>
                                                             </prop>
                                                             <prop type="object" name="tags">
                                                             <additionalProp>
@@ -852,8 +872,10 @@
                                                             </prop>
                                                             <prop type="object" name="privateLinkService">
                                                             <prop readOnly="True" type="string" name="etag"/>
-                                                            <prop type="@CommonExtendedLocation_read" name="extendedLocation"/>
-                                                            <prop type="string" name="id"/>
+                                                            <prop type="@ExtendedLocation_read" name="extendedLocation"/>
+                                                            <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/privateLinkServices/{}"/>
+                                                            </prop>
                                                             <prop type="ResourceLocation" name="location"/>
                                                             <prop readOnly="True" type="string" name="name"/>
                                                             <prop type="object" name="properties" clientFlatten="True">
@@ -904,27 +926,29 @@
                                                             <item value="&quot;Updating&quot;"/>
                                                             </enum>
                                                             </prop>
-                                                            <prop type="@CommonSubnet_read" name="subnet"/>
+                                                            <prop type="@Subnet_read" name="subnet"/>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="type"/>
                                                             </item>
                                                             </prop>
-                                                            <prop type="array<@CommonFrontendIPConfiguration_read>" name="loadBalancerFrontendIpConfigurations">
-                                                            <item type="@CommonFrontendIPConfiguration_read"/>
+                                                            <prop type="array<@FrontendIPConfiguration_read>" name="loadBalancerFrontendIpConfigurations">
+                                                            <item type="@FrontendIPConfiguration_read"/>
                                                             </prop>
-                                                            <prop readOnly="True" type="array<@CommonNetworkInterface_read>" name="networkInterfaces">
-                                                            <item type="@CommonNetworkInterface_read"/>
+                                                            <prop readOnly="True" type="array<@NetworkInterface_read>" name="networkInterfaces">
+                                                            <item type="@NetworkInterface_read"/>
                                                             </prop>
                                                             <prop readOnly="True" type="array<object>" name="privateEndpointConnections">
                                                             <item type="object">
                                                             <prop readOnly="True" type="string" name="etag"/>
-                                                            <prop type="string" name="id"/>
+                                                            <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/privateLinkServices/{}/privateEndpointConnections/{}"/>
+                                                            </prop>
                                                             <prop type="string" name="name"/>
                                                             <prop type="object" name="properties" clientFlatten="True">
                                                             <prop readOnly="True" type="string" name="linkIdentifier"/>
-                                                            <prop readOnly="True" type="@CommonPrivateEndpoint_read" name="privateEndpoint"/>
+                                                            <prop readOnly="True" type="@PrivateEndpoint_read" name="privateEndpoint"/>
                                                             <prop readOnly="True" type="string" name="privateEndpointLocation"/>
-                                                            <prop type="@CommonPrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
+                                                            <prop type="@PrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
                                                             <prop readOnly="True" type="string" name="provisioningState">
                                                             <enum>
                                                             <item value="&quot;Canceled&quot;"/>
@@ -973,10 +997,10 @@
                                                             </enum>
                                                             </prop>
                                                             <prop readOnly="True" type="string" name="resourceGuid"/>
-                                                            <prop readOnly="True" type="array<@CommonNetworkInterfaceTapConfiguration_read>" name="tapConfigurations">
-                                                            <item type="@CommonNetworkInterfaceTapConfiguration_read"/>
+                                                            <prop readOnly="True" type="array<@NetworkInterfaceTapConfiguration_read>" name="tapConfigurations">
+                                                            <item type="@NetworkInterfaceTapConfiguration_read"/>
                                                             </prop>
-                                                            <prop readOnly="True" type="@CommonSubResource_read" name="virtualMachine"/>
+                                                            <prop readOnly="True" type="@SubResource_read" name="virtualMachine"/>
                                                             <prop readOnly="True" type="boolean" name="vnetEncryptionSupported"/>
                                                             <prop type="string" name="workloadType"/>
                                                           </prop>
@@ -1000,9 +1024,9 @@
                                                       </prop>
                                                       <prop readOnly="True" type="string" name="resourceGuid"/>
                                                       <prop type="array<object>" name="securityRules">
-                                                        <item type="object" cls="CommonSecurityRule_read">
+                                                        <item type="object" cls="SecurityRule_read">
                                                           <prop readOnly="True" type="string" name="etag"/>
-                                                          <prop type="string" name="id"/>
+                                                          <prop type="ResourceId" name="id"/>
                                                           <prop type="string" name="name"/>
                                                           <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="string" name="access" required="True">
@@ -1016,8 +1040,8 @@
                                                             <prop type="array<string>" name="destinationAddressPrefixes">
                                                             <item type="string"/>
                                                             </prop>
-                                                            <prop type="array<@CommonApplicationSecurityGroup_read>" name="destinationApplicationSecurityGroups">
-                                                            <item type="@CommonApplicationSecurityGroup_read"/>
+                                                            <prop type="array<@ApplicationSecurityGroup_read>" name="destinationApplicationSecurityGroups">
+                                                            <item type="@ApplicationSecurityGroup_read"/>
                                                             </prop>
                                                             <prop type="string" name="destinationPortRange"/>
                                                             <prop type="array<string>" name="destinationPortRanges">
@@ -1055,9 +1079,11 @@
                                                             <item type="string"/>
                                                             </prop>
                                                             <prop type="array<object>" name="sourceApplicationSecurityGroups">
-                                                            <item type="object" cls="CommonApplicationSecurityGroup_read">
+                                                            <item type="object" cls="ApplicationSecurityGroup_read">
                                                             <prop readOnly="True" type="string" name="etag"/>
-                                                            <prop type="string" name="id"/>
+                                                            <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/applicationSecurityGroups/{}"/>
+                                                            </prop>
                                                             <prop type="ResourceLocation" name="location"/>
                                                             <prop readOnly="True" type="string" name="name"/>
                                                             <prop type="object" name="properties" clientFlatten="True">
@@ -1089,8 +1115,8 @@
                                                           <prop readOnly="True" type="string" name="type"/>
                                                         </item>
                                                       </prop>
-                                                      <prop readOnly="True" type="array<@CommonSubnet_read>" name="subnets">
-                                                        <item type="@CommonSubnet_read"/>
+                                                      <prop readOnly="True" type="array<@Subnet_read>" name="subnets">
+                                                        <item type="@Subnet_read"/>
                                                       </prop>
                                                     </prop>
                                                     <prop type="object" name="tags">
@@ -1109,8 +1135,8 @@
                                                       <item value="&quot;RouteTableEnabled&quot;"/>
                                                     </enum>
                                                   </prop>
-                                                  <prop readOnly="True" type="array<@CommonPrivateEndpoint_read>" name="privateEndpoints">
-                                                    <item type="@CommonPrivateEndpoint_read"/>
+                                                  <prop readOnly="True" type="array<@PrivateEndpoint_read>" name="privateEndpoints">
+                                                    <item type="@PrivateEndpoint_read"/>
                                                   </prop>
                                                   <prop type="string" name="privateLinkServiceNetworkPolicies">
                                                     <default value="&quot;Enabled&quot;"/>
@@ -1154,7 +1180,9 @@
                                                   </prop>
                                                   <prop type="object" name="routeTable">
                                                     <prop readOnly="True" type="string" name="etag"/>
-                                                    <prop type="string" name="id"/>
+                                                    <prop type="ResourceId" name="id">
+                                                      <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/routeTables/{}"/>
+                                                    </prop>
                                                     <prop type="ResourceLocation" name="location"/>
                                                     <prop readOnly="True" type="string" name="name"/>
                                                     <prop type="object" name="properties" clientFlatten="True">
@@ -1179,7 +1207,9 @@
                                                       <prop type="array<object>" name="routes">
                                                         <item type="object">
                                                           <prop readOnly="True" type="string" name="etag"/>
-                                                          <prop type="string" name="id"/>
+                                                          <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/routeTables/{}/routes/{}"/>
+                                                          </prop>
                                                           <prop type="string" name="name"/>
                                                           <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="string" name="addressPrefix"/>
@@ -1215,8 +1245,8 @@
                                                           <prop readOnly="True" type="string" name="type"/>
                                                         </item>
                                                       </prop>
-                                                      <prop readOnly="True" type="array<@CommonSubnet_read>" name="subnets">
-                                                        <item type="@CommonSubnet_read"/>
+                                                      <prop readOnly="True" type="array<@Subnet_read>" name="subnets">
+                                                        <item type="@Subnet_read"/>
                                                       </prop>
                                                     </prop>
                                                     <prop type="object" name="tags">
@@ -1255,7 +1285,9 @@
                                                   <prop type="array<object>" name="serviceEndpointPolicies">
                                                     <item type="object">
                                                       <prop readOnly="True" type="string" name="etag"/>
-                                                      <prop type="string" name="id"/>
+                                                      <prop type="ResourceId" name="id">
+                                                        <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/serviceEndpointPolicies/{}"/>
+                                                      </prop>
                                                       <prop readOnly="True" type="string" name="kind"/>
                                                       <prop type="ResourceLocation" name="location"/>
                                                       <prop readOnly="True" type="string" name="name"/>
@@ -1278,7 +1310,9 @@
                                                         <prop type="array<object>" name="serviceEndpointPolicyDefinitions">
                                                           <item type="object">
                                                             <prop readOnly="True" type="string" name="etag"/>
-                                                            <prop type="string" name="id"/>
+                                                            <prop type="ResourceId" name="id">
+                                                            <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/serviceEndpointPolicies/{}/serviceEndpointPolicyDefinitions/{}"/>
+                                                            </prop>
                                                             <prop type="string" name="name"/>
                                                             <prop type="object" name="properties" clientFlatten="True">
                                                             <prop type="string" name="description"/>
@@ -1300,8 +1334,8 @@
                                                             <prop readOnly="True" type="string" name="type"/>
                                                           </item>
                                                         </prop>
-                                                        <prop readOnly="True" type="array<@CommonSubnet_read>" name="subnets">
-                                                          <item type="@CommonSubnet_read"/>
+                                                        <prop readOnly="True" type="array<@Subnet_read>" name="subnets">
+                                                          <item type="@Subnet_read"/>
                                                         </prop>
                                                       </prop>
                                                       <prop type="object" name="tags">
@@ -1317,7 +1351,7 @@
                                                       <prop type="array<string>" name="locations">
                                                         <item type="string"/>
                                                       </prop>
-                                                      <prop type="@CommonSubResource_read" name="networkIdentifier"/>
+                                                      <prop type="@SubResource_read" name="networkIdentifier"/>
                                                       <prop readOnly="True" type="string" name="provisioningState">
                                                         <enum>
                                                           <item value="&quot;Canceled&quot;"/>
@@ -1331,7 +1365,7 @@
                                                       <prop type="string" name="service"/>
                                                     </item>
                                                   </prop>
-                                                  <prop type="@CommonSubResource_read" name="serviceGateway"/>
+                                                  <prop type="@SubResource_read" name="serviceGateway"/>
                                                   <prop type="string" name="sharingScope">
                                                     <enum>
                                                       <item value="&quot;DelegatedServices&quot;"/>
@@ -1347,12 +1381,14 @@
                                               <item type="string"/>
                                             </prop>
                                           </prop>
-                                          <prop type="@CommonNetworkInterfaceIPConfiguration_read" name="destinationNetworkInterfaceIPConfiguration"/>
+                                          <prop type="@NetworkInterfaceIPConfiguration_read" name="destinationNetworkInterfaceIPConfiguration"/>
                                           <prop type="integer32" name="destinationPort"/>
                                           <prop readOnly="True" type="array<object>" name="networkInterfaceTapConfigurations">
-                                            <item type="object" cls="CommonNetworkInterfaceTapConfiguration_read">
+                                            <item type="object" cls="NetworkInterfaceTapConfiguration_read">
                                               <prop readOnly="True" type="string" name="etag"/>
-                                              <prop type="string" name="id"/>
+                                              <prop type="ResourceId" name="id">
+                                                <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/networkInterfaces/{}/tapConfigurations/{}"/>
+                                              </prop>
                                               <prop type="string" name="name"/>
                                               <prop type="object" name="properties" clientFlatten="True">
                                                 <prop readOnly="True" type="string" name="provisioningState">
@@ -1365,7 +1401,7 @@
                                                     <item value="&quot;Updating&quot;"/>
                                                   </enum>
                                                 </prop>
-                                                <prop type="@CommonVirtualNetworkTap_read" name="virtualNetworkTap"/>
+                                                <prop type="@VirtualNetworkTap_read" name="virtualNetworkTap"/>
                                               </prop>
                                               <prop readOnly="True" type="string" name="type"/>
                                             </item>
@@ -1415,8 +1451,8 @@
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop type="string" name="affinityCookieName"/>
-                              <prop type="array<@CommonSubResource_read>" name="authenticationCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="authenticationCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                               <prop type="object" name="connectionDraining">
                                 <prop type="integer32" name="drainTimeoutInSec" required="True">
@@ -1435,7 +1471,7 @@
                               <prop type="string" name="path"/>
                               <prop type="boolean" name="pickHostNameFromBackendAddress"/>
                               <prop type="integer32" name="port"/>
-                              <prop type="@CommonSubResource_read" name="probe"/>
+                              <prop type="@SubResource_read" name="probe"/>
                               <prop type="boolean" name="probeEnabled"/>
                               <prop type="string" name="protocol">
                                 <enum>
@@ -1457,8 +1493,8 @@
                               </prop>
                               <prop type="integer32" name="requestTimeout"/>
                               <prop type="string" name="sniName"/>
-                              <prop type="array<@CommonSubResource_read>" name="trustedRootCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="trustedRootCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                               <prop type="boolean" name="validateCertChainAndExpiry">
                                 <default value="true"/>
@@ -1480,7 +1516,7 @@
                               <prop type="string" name="hostName"/>
                               <prop type="boolean" name="pickHostNameFromBackendAddress"/>
                               <prop type="integer32" name="port"/>
-                              <prop type="@CommonSubResource_read" name="probe"/>
+                              <prop type="@SubResource_read" name="probe"/>
                               <prop type="string" name="protocol">
                                 <enum>
                                   <item value="&quot;Http&quot;"/>
@@ -1500,8 +1536,8 @@
                                 </enum>
                               </prop>
                               <prop type="integer32" name="timeout"/>
-                              <prop type="array<@CommonSubResource_read>" name="trustedRootCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="trustedRootCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
@@ -1551,7 +1587,7 @@
                             </prop>
                           </item>
                         </prop>
-                        <prop type="@CommonSubResource_read" name="firewallPolicy"/>
+                        <prop type="@SubResource_read" name="firewallPolicy"/>
                         <prop type="boolean" name="forceFirewallPolicyAssociation"/>
                         <prop type="array<object>" name="frontendIPConfigurations">
                           <item type="object">
@@ -1566,7 +1602,7 @@
                                   <item value="&quot;Static&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="privateLinkConfiguration"/>
+                              <prop type="@SubResource_read" name="privateLinkConfiguration"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
                                   <item value="&quot;Canceled&quot;"/>
@@ -1577,8 +1613,8 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="publicIPAddress"/>
-                              <prop type="@CommonSubResource_read" name="subnet"/>
+                              <prop type="@SubResource_read" name="publicIPAddress"/>
+                              <prop type="@SubResource_read" name="subnet"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -1605,7 +1641,7 @@
                           </item>
                         </prop>
                         <prop type="array<object>" name="gatewayIPConfigurations">
-                          <item type="object" cls="CommonApplicationGatewayIPConfiguration_read">
+                          <item type="object" cls="ApplicationGatewayIPConfiguration_read">
                             <prop readOnly="True" type="string" name="etag"/>
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
@@ -1620,7 +1656,7 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="object" name="subnet" cls="CommonSubResource_read">
+                              <prop type="object" name="subnet" cls="SubResource_read">
                                 <prop type="string" name="id"/>
                               </prop>
                             </prop>
@@ -1655,9 +1691,9 @@
                                   </prop>
                                 </item>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="firewallPolicy"/>
-                              <prop type="@CommonSubResource_read" name="frontendIPConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="frontendPort"/>
+                              <prop type="@SubResource_read" name="firewallPolicy"/>
+                              <prop type="@SubResource_read" name="frontendIPConfiguration"/>
+                              <prop type="@SubResource_read" name="frontendPort"/>
                               <prop type="string" name="hostName"/>
                               <prop type="array<string>" name="hostNames">
                                 <item type="string"/>
@@ -1681,8 +1717,8 @@
                                 </enum>
                               </prop>
                               <prop type="boolean" name="requireServerNameIndication"/>
-                              <prop type="@CommonSubResource_read" name="sslCertificate"/>
-                              <prop type="@CommonSubResource_read" name="sslProfile"/>
+                              <prop type="@SubResource_read" name="sslCertificate"/>
+                              <prop type="@SubResource_read" name="sslProfile"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -1693,8 +1729,8 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="frontendIPConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="frontendPort"/>
+                              <prop type="@SubResource_read" name="frontendIPConfiguration"/>
+                              <prop type="@SubResource_read" name="frontendPort"/>
                               <prop type="array<string>" name="hostNames">
                                 <item type="string"/>
                               </prop>
@@ -1716,8 +1752,8 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="sslCertificate"/>
-                              <prop type="@CommonSubResource_read" name="sslProfile"/>
+                              <prop type="@SubResource_read" name="sslCertificate"/>
+                              <prop type="@SubResource_read" name="sslProfile"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -1741,7 +1777,7 @@
                                   <prop type="string" name="id"/>
                                   <prop type="string" name="name"/>
                                   <prop type="object" name="properties" clientFlatten="True">
-                                    <prop type="@CommonSubResource_read" name="backendAddressPool"/>
+                                    <prop type="@SubResource_read" name="backendAddressPool"/>
                                     <prop type="integer32" name="weightPerServer">
                                       <format maximum="100" minimum="1"/>
                                     </prop>
@@ -1774,12 +1810,14 @@
                         <prop readOnly="True" type="array<object>" name="privateEndpointConnections">
                           <item type="object">
                             <prop readOnly="True" type="string" name="etag"/>
-                            <prop type="string" name="id"/>
+                            <prop type="ResourceId" name="id">
+                              <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/applicationGateways/{}/privateEndpointConnections/{}"/>
+                            </prop>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop readOnly="True" type="string" name="linkIdentifier"/>
-                              <prop readOnly="True" type="@CommonPrivateEndpoint_read" name="privateEndpoint"/>
-                              <prop type="@CommonPrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
+                              <prop readOnly="True" type="@PrivateEndpoint_read" name="privateEndpoint"/>
+                              <prop type="@PrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
                                   <item value="&quot;Canceled&quot;"/>
@@ -1824,7 +1862,7 @@
                                         <item value="&quot;Updating&quot;"/>
                                       </enum>
                                     </prop>
-                                    <prop type="@CommonSubResource_read" name="subnet"/>
+                                    <prop type="@SubResource_read" name="subnet"/>
                                   </prop>
                                   <prop readOnly="True" type="string" name="type"/>
                                 </item>
@@ -1907,8 +1945,8 @@
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop type="boolean" name="includePath"/>
                               <prop type="boolean" name="includeQueryString"/>
-                              <prop type="array<@CommonSubResource_read>" name="pathRules">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="pathRules">
+                                <item type="@SubResource_read"/>
                               </prop>
                               <prop type="string" name="redirectType">
                                 <enum>
@@ -1918,13 +1956,13 @@
                                   <item value="&quot;Temporary&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="array<@CommonSubResource_read>" name="requestRoutingRules">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="requestRoutingRules">
+                                <item type="@SubResource_read"/>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="targetListener"/>
+                              <prop type="@SubResource_read" name="targetListener"/>
                               <prop type="string" name="targetUrl"/>
-                              <prop type="array<@CommonSubResource_read>" name="urlPathMaps">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="urlPathMaps">
+                                <item type="@SubResource_read"/>
                               </prop>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
@@ -1936,11 +1974,11 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                              <prop type="@CommonSubResource_read" name="backendHttpSettings"/>
-                              <prop type="@CommonSubResource_read" name="entraJWTValidationConfig"/>
-                              <prop type="@CommonSubResource_read" name="httpListener"/>
-                              <prop type="@CommonSubResource_read" name="loadDistributionPolicy"/>
+                              <prop type="@SubResource_read" name="backendAddressPool"/>
+                              <prop type="@SubResource_read" name="backendHttpSettings"/>
+                              <prop type="@SubResource_read" name="entraJWTValidationConfig"/>
+                              <prop type="@SubResource_read" name="httpListener"/>
+                              <prop type="@SubResource_read" name="loadDistributionPolicy"/>
                               <prop type="integer32" name="priority">
                                 <format maximum="20000" minimum="1"/>
                               </prop>
@@ -1954,15 +1992,15 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="redirectConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="rewriteRuleSet"/>
+                              <prop type="@SubResource_read" name="redirectConfiguration"/>
+                              <prop type="@SubResource_read" name="rewriteRuleSet"/>
                               <prop type="string" name="ruleType">
                                 <enum>
                                   <item value="&quot;Basic&quot;"/>
                                   <item value="&quot;PathBasedRouting&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="urlPathMap"/>
+                              <prop type="@SubResource_read" name="urlPathMap"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -1984,7 +2022,7 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="array<object>" name="rewriteRules">
+                              <prop type="array<object>" name="rewriteRules" identifiers="name">
                                 <item type="object">
                                   <prop type="object" name="actionSet">
                                     <prop type="array<object>" name="requestHeaderConfigurations">
@@ -2007,7 +2045,7 @@
                                       <prop type="boolean" name="reroute"/>
                                     </prop>
                                   </prop>
-                                  <prop type="array<object>" name="conditions">
+                                  <prop type="array<object>" name="conditions" identifiers="variable">
                                     <item type="object">
                                       <prop type="boolean" name="ignoreCase"/>
                                       <prop type="boolean" name="negate"/>
@@ -2028,9 +2066,9 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                              <prop type="@CommonSubResource_read" name="backendSettings"/>
-                              <prop type="@CommonSubResource_read" name="listener"/>
+                              <prop type="@SubResource_read" name="backendAddressPool"/>
+                              <prop type="@SubResource_read" name="backendSettings"/>
+                              <prop type="@SubResource_read" name="listener"/>
                               <prop type="integer32" name="priority" required="True">
                                 <format maximum="20000" minimum="1"/>
                               </prop>
@@ -2214,8 +2252,8 @@
                                 </enum>
                               </prop>
                               <prop type="@ApplicationGatewaySslPolicy_read" name="sslPolicy"/>
-                              <prop type="array<@CommonSubResource_read>" name="trustedClientCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="trustedClientCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
@@ -2272,21 +2310,21 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="defaultBackendAddressPool"/>
-                              <prop type="@CommonSubResource_read" name="defaultBackendHttpSettings"/>
-                              <prop type="@CommonSubResource_read" name="defaultLoadDistributionPolicy"/>
-                              <prop type="@CommonSubResource_read" name="defaultRedirectConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="defaultRewriteRuleSet"/>
+                              <prop type="@SubResource_read" name="defaultBackendAddressPool"/>
+                              <prop type="@SubResource_read" name="defaultBackendHttpSettings"/>
+                              <prop type="@SubResource_read" name="defaultLoadDistributionPolicy"/>
+                              <prop type="@SubResource_read" name="defaultRedirectConfiguration"/>
+                              <prop type="@SubResource_read" name="defaultRewriteRuleSet"/>
                               <prop type="array<object>" name="pathRules">
                                 <item type="object">
                                   <prop readOnly="True" type="string" name="etag"/>
                                   <prop type="string" name="id"/>
                                   <prop type="string" name="name"/>
                                   <prop type="object" name="properties" clientFlatten="True">
-                                    <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                                    <prop type="@CommonSubResource_read" name="backendHttpSettings"/>
-                                    <prop type="@CommonSubResource_read" name="firewallPolicy"/>
-                                    <prop type="@CommonSubResource_read" name="loadDistributionPolicy"/>
+                                    <prop type="@SubResource_read" name="backendAddressPool"/>
+                                    <prop type="@SubResource_read" name="backendHttpSettings"/>
+                                    <prop type="@SubResource_read" name="firewallPolicy"/>
+                                    <prop type="@SubResource_read" name="loadDistributionPolicy"/>
                                     <prop type="array<string>" name="paths">
                                       <item type="string"/>
                                     </prop>
@@ -2300,8 +2338,8 @@
                                         <item value="&quot;Updating&quot;"/>
                                       </enum>
                                     </prop>
-                                    <prop type="@CommonSubResource_read" name="redirectConfiguration"/>
-                                    <prop type="@CommonSubResource_read" name="rewriteRuleSet"/>
+                                    <prop type="@SubResource_read" name="redirectConfiguration"/>
+                                    <prop type="@SubResource_read" name="rewriteRuleSet"/>
                                   </prop>
                                   <prop readOnly="True" type="string" name="type"/>
                                 </item>
@@ -2375,7 +2413,7 @@
           <response isError="True">
             <body>
               <json>
-                <schema readOnly="True" type="@ODataV4Format"/>
+                <schema type="@ODataV4Format"/>
               </json>
             </body>
           </response>
@@ -2386,11 +2424,9 @@
           <request method="get">
             <path>
               <param type="string" name="resourceGroupName" arg="$Path.resourceGroupName" required="True">
-                <format pattern="^[-\w\._\(\)]+$" maxLength="90" minLength="1"/>
+                <format maxLength="90" minLength="1"/>
               </param>
-              <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True">
-                <format minLength="1"/>
-              </param>
+              <param type="uuid" name="subscriptionId" arg="$Path.subscriptionId" required="True"/>
             </path>
             <query>
               <const readOnly="True" const="True" type="string" name="api-version" required="True">
@@ -2407,8 +2443,10 @@
                   <prop type="array<object>" name="value" required="True">
                     <item type="object">
                       <prop readOnly="True" type="string" name="etag"/>
-                      <prop type="string" name="id"/>
-                      <prop type="@CommonManagedServiceIdentity_read" name="identity"/>
+                      <prop type="ResourceId" name="id">
+                        <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/applicationGateways/{}"/>
+                      </prop>
+                      <prop type="@ManagedServiceIdentity_read" name="identity"/>
                       <prop type="ResourceLocation" name="location"/>
                       <prop readOnly="True" type="string" name="name"/>
                       <prop type="object" name="properties" clientFlatten="True">
@@ -2441,8 +2479,8 @@
                             <format minimum="0"/>
                           </prop>
                         </prop>
-                        <prop type="array<@CommonApplicationGatewayBackendAddressPool_read>" name="backendAddressPools">
-                          <item type="@CommonApplicationGatewayBackendAddressPool_read"/>
+                        <prop type="array<@ApplicationGatewayBackendAddressPool_read>" name="backendAddressPools">
+                          <item type="@ApplicationGatewayBackendAddressPool_read"/>
                         </prop>
                         <prop type="array<object>" name="backendHttpSettingsCollection">
                           <item type="object">
@@ -2451,8 +2489,8 @@
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop type="string" name="affinityCookieName"/>
-                              <prop type="array<@CommonSubResource_read>" name="authenticationCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="authenticationCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                               <prop type="object" name="connectionDraining">
                                 <prop type="integer32" name="drainTimeoutInSec" required="True">
@@ -2471,7 +2509,7 @@
                               <prop type="string" name="path"/>
                               <prop type="boolean" name="pickHostNameFromBackendAddress"/>
                               <prop type="integer32" name="port"/>
-                              <prop type="@CommonSubResource_read" name="probe"/>
+                              <prop type="@SubResource_read" name="probe"/>
                               <prop type="boolean" name="probeEnabled"/>
                               <prop type="string" name="protocol">
                                 <enum>
@@ -2493,8 +2531,8 @@
                               </prop>
                               <prop type="integer32" name="requestTimeout"/>
                               <prop type="string" name="sniName"/>
-                              <prop type="array<@CommonSubResource_read>" name="trustedRootCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="trustedRootCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                               <prop type="boolean" name="validateCertChainAndExpiry">
                                 <default value="true"/>
@@ -2516,7 +2554,7 @@
                               <prop type="string" name="hostName"/>
                               <prop type="boolean" name="pickHostNameFromBackendAddress"/>
                               <prop type="integer32" name="port"/>
-                              <prop type="@CommonSubResource_read" name="probe"/>
+                              <prop type="@SubResource_read" name="probe"/>
                               <prop type="string" name="protocol">
                                 <enum>
                                   <item value="&quot;Http&quot;"/>
@@ -2536,8 +2574,8 @@
                                 </enum>
                               </prop>
                               <prop type="integer32" name="timeout"/>
-                              <prop type="array<@CommonSubResource_read>" name="trustedRootCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="trustedRootCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
@@ -2587,7 +2625,7 @@
                             </prop>
                           </item>
                         </prop>
-                        <prop type="@CommonSubResource_read" name="firewallPolicy"/>
+                        <prop type="@SubResource_read" name="firewallPolicy"/>
                         <prop type="boolean" name="forceFirewallPolicyAssociation"/>
                         <prop type="array<object>" name="frontendIPConfigurations">
                           <item type="object">
@@ -2602,7 +2640,7 @@
                                   <item value="&quot;Static&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="privateLinkConfiguration"/>
+                              <prop type="@SubResource_read" name="privateLinkConfiguration"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
                                   <item value="&quot;Canceled&quot;"/>
@@ -2613,8 +2651,8 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="publicIPAddress"/>
-                              <prop type="@CommonSubResource_read" name="subnet"/>
+                              <prop type="@SubResource_read" name="publicIPAddress"/>
+                              <prop type="@SubResource_read" name="subnet"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -2640,8 +2678,8 @@
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
                         </prop>
-                        <prop type="array<@CommonApplicationGatewayIPConfiguration_read>" name="gatewayIPConfigurations">
-                          <item type="@CommonApplicationGatewayIPConfiguration_read"/>
+                        <prop type="array<@ApplicationGatewayIPConfiguration_read>" name="gatewayIPConfigurations">
+                          <item type="@ApplicationGatewayIPConfiguration_read"/>
                         </prop>
                         <prop type="object" name="globalConfiguration">
                           <prop type="boolean" name="enableRequestBuffering"/>
@@ -2656,9 +2694,9 @@
                               <prop type="array<@ApplicationGatewayCustomError_read>" name="customErrorConfigurations">
                                 <item type="@ApplicationGatewayCustomError_read"/>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="firewallPolicy"/>
-                              <prop type="@CommonSubResource_read" name="frontendIPConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="frontendPort"/>
+                              <prop type="@SubResource_read" name="firewallPolicy"/>
+                              <prop type="@SubResource_read" name="frontendIPConfiguration"/>
+                              <prop type="@SubResource_read" name="frontendPort"/>
                               <prop type="string" name="hostName"/>
                               <prop type="array<string>" name="hostNames">
                                 <item type="string"/>
@@ -2682,8 +2720,8 @@
                                 </enum>
                               </prop>
                               <prop type="boolean" name="requireServerNameIndication"/>
-                              <prop type="@CommonSubResource_read" name="sslCertificate"/>
-                              <prop type="@CommonSubResource_read" name="sslProfile"/>
+                              <prop type="@SubResource_read" name="sslCertificate"/>
+                              <prop type="@SubResource_read" name="sslProfile"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -2694,8 +2732,8 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="frontendIPConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="frontendPort"/>
+                              <prop type="@SubResource_read" name="frontendIPConfiguration"/>
+                              <prop type="@SubResource_read" name="frontendPort"/>
                               <prop type="array<string>" name="hostNames">
                                 <item type="string"/>
                               </prop>
@@ -2717,8 +2755,8 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="sslCertificate"/>
-                              <prop type="@CommonSubResource_read" name="sslProfile"/>
+                              <prop type="@SubResource_read" name="sslCertificate"/>
+                              <prop type="@SubResource_read" name="sslProfile"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -2742,7 +2780,7 @@
                                   <prop type="string" name="id"/>
                                   <prop type="string" name="name"/>
                                   <prop type="object" name="properties" clientFlatten="True">
-                                    <prop type="@CommonSubResource_read" name="backendAddressPool"/>
+                                    <prop type="@SubResource_read" name="backendAddressPool"/>
                                     <prop type="integer32" name="weightPerServer">
                                       <format maximum="100" minimum="1"/>
                                     </prop>
@@ -2775,12 +2813,14 @@
                         <prop readOnly="True" type="array<object>" name="privateEndpointConnections">
                           <item type="object">
                             <prop readOnly="True" type="string" name="etag"/>
-                            <prop type="string" name="id"/>
+                            <prop type="ResourceId" name="id">
+                              <format template="/subscriptions/{}/resourceGroups/{}/providers/Microsoft.Network/applicationGateways/{}/privateEndpointConnections/{}"/>
+                            </prop>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop readOnly="True" type="string" name="linkIdentifier"/>
-                              <prop readOnly="True" type="@CommonPrivateEndpoint_read" name="privateEndpoint"/>
-                              <prop type="@CommonPrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
+                              <prop readOnly="True" type="@PrivateEndpoint_read" name="privateEndpoint"/>
+                              <prop type="@PrivateLinkServiceConnectionState_read" name="privateLinkServiceConnectionState"/>
                               <prop readOnly="True" type="string" name="provisioningState">
                                 <enum>
                                   <item value="&quot;Canceled&quot;"/>
@@ -2825,7 +2865,7 @@
                                         <item value="&quot;Updating&quot;"/>
                                       </enum>
                                     </prop>
-                                    <prop type="@CommonSubResource_read" name="subnet"/>
+                                    <prop type="@SubResource_read" name="subnet"/>
                                   </prop>
                                   <prop readOnly="True" type="string" name="type"/>
                                 </item>
@@ -2908,8 +2948,8 @@
                             <prop type="object" name="properties" clientFlatten="True">
                               <prop type="boolean" name="includePath"/>
                               <prop type="boolean" name="includeQueryString"/>
-                              <prop type="array<@CommonSubResource_read>" name="pathRules">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="pathRules">
+                                <item type="@SubResource_read"/>
                               </prop>
                               <prop type="string" name="redirectType">
                                 <enum>
@@ -2919,13 +2959,13 @@
                                   <item value="&quot;Temporary&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="array<@CommonSubResource_read>" name="requestRoutingRules">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="requestRoutingRules">
+                                <item type="@SubResource_read"/>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="targetListener"/>
+                              <prop type="@SubResource_read" name="targetListener"/>
                               <prop type="string" name="targetUrl"/>
-                              <prop type="array<@CommonSubResource_read>" name="urlPathMaps">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="urlPathMaps">
+                                <item type="@SubResource_read"/>
                               </prop>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
@@ -2937,11 +2977,11 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                              <prop type="@CommonSubResource_read" name="backendHttpSettings"/>
-                              <prop type="@CommonSubResource_read" name="entraJWTValidationConfig"/>
-                              <prop type="@CommonSubResource_read" name="httpListener"/>
-                              <prop type="@CommonSubResource_read" name="loadDistributionPolicy"/>
+                              <prop type="@SubResource_read" name="backendAddressPool"/>
+                              <prop type="@SubResource_read" name="backendHttpSettings"/>
+                              <prop type="@SubResource_read" name="entraJWTValidationConfig"/>
+                              <prop type="@SubResource_read" name="httpListener"/>
+                              <prop type="@SubResource_read" name="loadDistributionPolicy"/>
                               <prop type="integer32" name="priority">
                                 <format maximum="20000" minimum="1"/>
                               </prop>
@@ -2955,15 +2995,15 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="redirectConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="rewriteRuleSet"/>
+                              <prop type="@SubResource_read" name="redirectConfiguration"/>
+                              <prop type="@SubResource_read" name="rewriteRuleSet"/>
                               <prop type="string" name="ruleType">
                                 <enum>
                                   <item value="&quot;Basic&quot;"/>
                                   <item value="&quot;PathBasedRouting&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="@CommonSubResource_read" name="urlPathMap"/>
+                              <prop type="@SubResource_read" name="urlPathMap"/>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
                           </item>
@@ -2985,7 +3025,7 @@
                                   <item value="&quot;Updating&quot;"/>
                                 </enum>
                               </prop>
-                              <prop type="array<object>" name="rewriteRules">
+                              <prop type="array<object>" name="rewriteRules" identifiers="name">
                                 <item type="object">
                                   <prop type="object" name="actionSet">
                                     <prop type="array<@ApplicationGatewayHeaderConfiguration_read>" name="requestHeaderConfigurations">
@@ -3000,7 +3040,7 @@
                                       <prop type="boolean" name="reroute"/>
                                     </prop>
                                   </prop>
-                                  <prop type="array<object>" name="conditions">
+                                  <prop type="array<object>" name="conditions" identifiers="variable">
                                     <item type="object">
                                       <prop type="boolean" name="ignoreCase"/>
                                       <prop type="boolean" name="negate"/>
@@ -3021,9 +3061,9 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                              <prop type="@CommonSubResource_read" name="backendSettings"/>
-                              <prop type="@CommonSubResource_read" name="listener"/>
+                              <prop type="@SubResource_read" name="backendAddressPool"/>
+                              <prop type="@SubResource_read" name="backendSettings"/>
+                              <prop type="@SubResource_read" name="listener"/>
                               <prop type="integer32" name="priority" required="True">
                                 <format maximum="20000" minimum="1"/>
                               </prop>
@@ -3138,8 +3178,8 @@
                                 </enum>
                               </prop>
                               <prop type="@ApplicationGatewaySslPolicy_read" name="sslPolicy"/>
-                              <prop type="array<@CommonSubResource_read>" name="trustedClientCertificates">
-                                <item type="@CommonSubResource_read"/>
+                              <prop type="array<@SubResource_read>" name="trustedClientCertificates">
+                                <item type="@SubResource_read"/>
                               </prop>
                             </prop>
                             <prop readOnly="True" type="string" name="type"/>
@@ -3196,21 +3236,21 @@
                             <prop type="string" name="id"/>
                             <prop type="string" name="name"/>
                             <prop type="object" name="properties" clientFlatten="True">
-                              <prop type="@CommonSubResource_read" name="defaultBackendAddressPool"/>
-                              <prop type="@CommonSubResource_read" name="defaultBackendHttpSettings"/>
-                              <prop type="@CommonSubResource_read" name="defaultLoadDistributionPolicy"/>
-                              <prop type="@CommonSubResource_read" name="defaultRedirectConfiguration"/>
-                              <prop type="@CommonSubResource_read" name="defaultRewriteRuleSet"/>
+                              <prop type="@SubResource_read" name="defaultBackendAddressPool"/>
+                              <prop type="@SubResource_read" name="defaultBackendHttpSettings"/>
+                              <prop type="@SubResource_read" name="defaultLoadDistributionPolicy"/>
+                              <prop type="@SubResource_read" name="defaultRedirectConfiguration"/>
+                              <prop type="@SubResource_read" name="defaultRewriteRuleSet"/>
                               <prop type="array<object>" name="pathRules">
                                 <item type="object">
                                   <prop readOnly="True" type="string" name="etag"/>
                                   <prop type="string" name="id"/>
                                   <prop type="string" name="name"/>
                                   <prop type="object" name="properties" clientFlatten="True">
-                                    <prop type="@CommonSubResource_read" name="backendAddressPool"/>
-                                    <prop type="@CommonSubResource_read" name="backendHttpSettings"/>
-                                    <prop type="@CommonSubResource_read" name="firewallPolicy"/>
-                                    <prop type="@CommonSubResource_read" name="loadDistributionPolicy"/>
+                                    <prop type="@SubResource_read" name="backendAddressPool"/>
+                                    <prop type="@SubResource_read" name="backendHttpSettings"/>
+                                    <prop type="@SubResource_read" name="firewallPolicy"/>
+                                    <prop type="@SubResource_read" name="loadDistributionPolicy"/>
                                     <prop type="array<string>" name="paths">
                                       <item type="string"/>
                                     </prop>
@@ -3224,8 +3264,8 @@
                                         <item value="&quot;Updating&quot;"/>
                                       </enum>
                                     </prop>
-                                    <prop type="@CommonSubResource_read" name="redirectConfiguration"/>
-                                    <prop type="@CommonSubResource_read" name="rewriteRuleSet"/>
+                                    <prop type="@SubResource_read" name="redirectConfiguration"/>
+                                    <prop type="@SubResource_read" name="rewriteRuleSet"/>
                                   </prop>
                                   <prop readOnly="True" type="string" name="type"/>
                                 </item>
@@ -3299,7 +3339,7 @@
           <response isError="True">
             <body>
               <json>
-                <schema readOnly="True" type="@ODataV4Format"/>
+                <schema type="@ODataV4Format"/>
               </json>
             </body>
           </response>
